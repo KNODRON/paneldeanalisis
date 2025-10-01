@@ -218,6 +218,47 @@
         .then(() => console.log("Service Worker registrado"))
         .catch(err => console.error("Error registrando SW:", err));
     }
+    body {
+    position: relative;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* Marca de agua */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("logo-os9.jpeg") no-repeat center center;
+    background-size: 40%; /* tamaño base en pantallas grandes */
+    opacity: 0.08; /* Transparencia de marca de agua */
+    z-index: -1; /* lo manda atrás del contenido */
+    pointer-events: none; /* evita que bloquee clics */
+}
+
+/* Ajustes responsive */
+@media (max-width: 1024px) {
+    body::before {
+        background-size: 55%; /* tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    body::before {
+        background-size: 70%; /* celulares grandes */
+    }
+}
+
+@media (max-width: 480px) {
+    body::before {
+        background-size: 90%; /* celulares pequeños */
+    }
+}
+
   </script>
 </body>
 </html>
