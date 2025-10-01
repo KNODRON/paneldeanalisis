@@ -1,128 +1,184 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Panel de Herramientas</title>
-
-  <!-- Manifest -->
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#ff6600">
 
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f6f9;
-      margin: 0;
-      padding: 0;
+    /* ========= Básicos y layout ========= */
+    :root{
+      --header-bg: #ff6600;
+      --section-bg: #00b894;
+      --page-bg: #f4f6f9;
     }
+
+    html,body{
+      height:100%;
+      margin:0;
+      padding:0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--page-bg);
+    }
+
+    /* Marca de agua (logo) - se aplica en pseudo-elemento para no afectar contenido */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: url("logo-os9.jpeg") no-repeat center center;
+      background-size: 40%; /* tamaño base para desktop */
+      opacity: 0.08;        /* ajusta esto si quieres más/menos visibilidad */
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    /* responsive adjustments for watermark */
+    @media (max-width: 1024px) {
+      body::before { background-size: 55%; }
+    }
+    @media (max-width: 768px) {
+      body::before { background-size: 70%; }
+    }
+    @media (max-width: 480px) {
+      body::before { background-size: 90%; }
+    }
+
+    /* Header */
     header {
-      background: #ff6600;
+      background: var(--header-bg);
       color: #fff;
       padding: 15px;
       font-size: 20px;
-      font-weight: bold;
+      font-weight: 700;
       text-align: center;
+      position: relative;
+      z-index: 2; /* por encima de la marca de agua */
     }
+
+    /* Secciones */
     h2 {
-      background: #00b894;
-      color: white;
+      background: var(--section-bg);
+      color: #fff;
       padding: 10px;
-      margin-top: 20px;
+      margin: 20px 0 0 0;
       text-align: center;
+      font-size: 20px;
     }
+
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(160px,1fr));
       gap: 20px;
       padding: 20px;
       max-width: 1200px;
-      margin: auto;
+      margin: 0 auto 40px auto;
+      box-sizing: border-box;
     }
+
     .card {
       background: #fff;
       border-radius: 10px;
-      padding: 15px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-      transition: transform 0.2s;
+      padding: 18px 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+      transition: transform .15s ease, box-shadow .15s ease;
       text-decoration: none;
-      color: #333;
+      color: #222;
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100px;
     }
     .card:hover {
-      transform: scale(1.05);
+      transform: translateY(-4px) scale(1.01);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.12);
     }
     .card img {
       width: 60px;
       height: 60px;
+      object-fit: contain;
       margin-bottom: 10px;
+      filter: none; /* si quieres iconos verdes-blanco, sube PNGs ya preparados */
     }
-    .card span {
-      display: block;
-      font-weight: bold;
-      font-size: 13px;
+    .card span{
+      display:block;
+      font-weight:600;
+      font-size:13px;
+      line-height:1.1;
+      padding: 0 6px;
+    }
+
+    /* Mobile tweaks */
+    @media (max-width:420px){
+      .card img { width:54px; height:54px; }
+      .grid { gap:16px; padding:16px; }
+      h2 { font-size:18px; padding:8px; }
     }
   </style>
 </head>
 <body>
-  <header>OSINT para Analisis 🐺</header>
+  <header>OSINT para Análisis 🐺</header>
 
   <!-- USO DIARIO -->
   <h2>Uso Diario</h2>
   <div class="grid">
     <a class="card" href="http://doe.carabineros.cl/" target="_blank">
-      <img src="icon-doe.png"><span>Documentación Electrónica</span>
+      <img src="icon-doe.png" alt="Documentación Electrónica"><span>Documentación Electrónica</span>
     </a>
     <a class="card" href="http://sicpol.carabineros.cl/" target="_blank">
-      <img src="icon-sicpol.png"><span>SICPOL</span>
+      <img src="icon-sicpol.png" alt="SICPOL"><span>SICPOL</span>
     </a>
     <a class="card" href="http://scic.carabineros.cl/scicd/login.php" target="_blank">
-      <img src="icon-scic.png"><span>SCIC</span>
+      <img src="icon-scic.png" alt="SCIC"><span>SCIC</span>
     </a>
     <a class="card" href="http://monitoweb.srcei.cl/monito/121/92/135c6582.mon" target="_blank">
-      <img src="icon-monito.png"><span>MonitoWeb</span>
+      <img src="icon-monito.png" alt="MonitoWeb"><span>MonitoWeb</span>
     </a>
     <a class="card" href="http://geminis.si2.cl:8080/#/" target="_blank">
-      <img src="gemini.png"><span>Gemini</span>
+      <img src="gemini.png" alt="Gemini"><span>Gemini</span>
     </a>
     <a class="card" href="https://www.encargoautoseguro.gob.cl/index.php" target="_blank">
-      <img src="icon-suev.png"><span>SUEV</span>
+      <img src="icon-suev.png" alt="SUEV"><span>SUEV</span>
     </a>
     <a class="card" href="http://departamentosebv.carabineros.cl/encargo/datatables/index_sebvp.php" target="_blank">
-      <img src="icon-encargosebv.png"><span>Encargo SEBV</span>
+      <img src="icon-encargosebv.png" alt="Encargo SEBV"><span>Encargo SEBV</span>
     </a>
     <a class="card" href="http://sait.carabineros.cl/sait/index.aspx" target="_blank">
-      <img src="icon-sait.png"><span>SAIT</span>
+      <img src="icon-sait.png" alt="SAIT"><span>SAIT</span>
     </a>
     <a class="card" href="https://apps-publicas.interior.gob.cl/situacion-migratoria-web/login_inicio" target="_blank">
-      <img src="icon-migratoria.png"><span>Migraciones</span>
+      <img src="icon-migratoria.png" alt="Migraciones"><span>Migraciones</span>
     </a>
     <a class="card" href="https://www4.sii.cl/mapasui/internet/#/contenido/index.html" target="_blank">
-      <img src="icon-siimapas.png"><span>SII Mapas</span>
+      <img src="icon-siimapas.png" alt="SII Mapas"><span>SII Mapas</span>
     </a>
     <a class="card" href="https://zeus.sii.cl/avalu_cgi/br/brc801.sh" target="_blank">
-      <img src="icon-siibienraiz.png"><span>SII Bien Raíz</span>
+      <img src="icon-siibienraiz.png" alt="SII Bien Raíz"><span>SII Bien Raíz</span>
     </a>
     <a class="card" href="https://zeus.sii.cl/cvc/stc/stc.html" target="_blank">
-      <img src="icon-stributaria.png"><span>SII Situación Tributaria</span>
+      <img src="icon-stributaria.png" alt="SII Situación Tributaria"><span>SII Situación Tributaria</span>
     </a>
     <a class="card" href="http://10.190.9.11:7777/login/LoginOracle.html" target="_blank">
-      <img src="icon-bud.png"><span>BUD</span>
+      <img src="icon-bud.png" alt="BUD"><span>BUD</span>
     </a>
     <a class="card" href="https://www.registrodeempresasysociedades.cl/BuscarActuaciones.aspx" target="_blank">
-      <img src="icon-empresa.png"><span>Consulta Empresas</span>
+      <img src="icon-empresa.png" alt="Consulta Empresas"><span>Consulta Empresas</span>
     </a>
     <a class="card" href="https://apps.mtt.cl/consultaweb/" target="_blank">
-      <img src="icon-mtt.png"><span>Consulta MTT</span>
+      <img src="icon-mtt.png" alt="Consulta MTT"><span>Consulta MTT</span>
     </a>
     <a class="card" href="https://www.dateas.com/es" target="_blank">
-      <img src="icon-info.png"><span>Dateas</span>
+      <img src="icon-info.png" alt="Dateas"><span>Dateas</span>
     </a>
     <a class="card" href="https://www.nombrerutyfirma.com/" target="_blank">
-      <img src="rutyfirma.png"><span>Nombre, RUT y Firma</span>
+      <img src="rutyfirma.png" alt="Nombre RUT Firma"><span>Nombre, RUT y Firma</span>
     </a>
     <a class="card" href="http://telefoniaip.carabineros.cl/" target="_blank">
-      <img src="icon-telefoniaip.png"><span>Telefonía IP</span>
+      <img src="icon-telefoniaip.png" alt="Telefonía IP"><span>Telefonía IP</span>
     </a>
   </div>
 
@@ -130,13 +186,13 @@
   <h2>Facebook</h2>
   <div class="grid">
     <a class="card" href="https://www.sowsearch.info" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"><span>Sowsearch</span>
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt=""><span>Sowsearch</span>
     </a>
     <a class="card" href="https://www.plessas.net/facebookmatrix" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"><span>Facebook Matrix</span>
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt=""><span>Facebook Matrix</span>
     </a>
     <a class="card" href="https://www.whopostedwhat.com/" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"><span>Who Posted What</span>
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt=""><span>Who Posted What</span>
     </a>
   </div>
 
@@ -144,7 +200,7 @@
   <h2>TikTok</h2>
   <div class="grid">
     <a class="card" href="https://www.picuki.com" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png"><span>Picuki</span>
+      <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" alt=""><span>Picuki</span>
     </a>
   </div>
 
@@ -152,16 +208,16 @@
   <h2>Instagram</h2>
   <div class="grid">
     <a class="card" href="https://picuki.site" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png"><span>Picuki Site</span>
+      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt=""><span>Picuki Site</span>
     </a>
     <a class="card" href="https://dumpor.io" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png"><span>Dumpor</span>
+      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt=""><span>Dumpor</span>
     </a>
     <a class="card" href="https://gramsnap.com/en" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png"><span>Gramsnap</span>
+      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt=""><span>Gramsnap</span>
     </a>
     <a class="card" href="https://indown.io/insta-dp-viewer/es" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png"><span>Insta DP</span>
+      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt=""><span>Insta DP</span>
     </a>
   </div>
 
@@ -169,22 +225,22 @@
   <h2>Herramientas de Imagen</h2>
   <div class="grid">
     <a class="card" href="https://www.facesearchai.com/" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/3600/3600915.png"><span>Face Search</span>
+      <img src="https://cdn-icons-png.flaticon.com/512/3600/3600915.png" alt=""><span>Face Search</span>
     </a>
     <a class="card" href="https://flickr.com/" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png"><span>Flickr</span>
+      <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt=""><span>Flickr</span>
     </a>
     <a class="card" href="https://imgops.com/" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/1048/1048953.png"><span>ImgOps</span>
+      <img src="https://cdn-icons-png.flaticon.com/512/1048/1048953.png" alt=""><span>ImgOps</span>
     </a>
     <a class="card" href="https://tineye.com/" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/709/709699.png"><span>TinEye</span>
+      <img src="https://cdn-icons-png.flaticon.com/512/709/709699.png" alt=""><span>TinEye</span>
     </a>
     <a class="card" href="https://images.google.com/" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/300/300221.png"><span>Google Img</span>
+      <img src="https://cdn-icons-png.flaticon.com/512/300/300221.png" alt=""><span>Google Img</span>
     </a>
     <a class="card" href="https://www.bing.com/images" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/888/888859.png"><span>Bing Img</span>
+      <img src="https://cdn-icons-png.flaticon.com/512/888/888859.png" alt=""><span>Bing Img</span>
     </a>
   </div>
 
@@ -192,73 +248,32 @@
   <h2>Otros</h2>
   <div class="grid">
     <a class="card" href="https://www.osintcombine.com/tools" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/888/888879.png"><span>OSINT Combine</span>
+      <img src="https://cdn-icons-png.flaticon.com/512/888/888879.png" alt=""><span>OSINT Combine</span>
     </a>
     <a class="card" href="https://inteltechniques.com/tools/index.html" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/1021/1021260.png"><span>IntelTechniques</span>
+      <img src="https://cdn-icons-png.flaticon.com/512/1021/1021260.png" alt=""><span>IntelTechniques</span>
     </a>
     <a class="card" href="https://intelx.io/" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png"><span>IntelX</span>
+      <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt=""><span>IntelX</span>
     </a>
     <a class="card" href="https://www.similarweb.com/" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/1048/1048947.png"><span>SimilarWeb</span>
+      <img src="https://cdn-icons-png.flaticon.com/512/1048/1048947.png" alt=""><span>SimilarWeb</span>
     </a>
     <a class="card" href="https://franzpc.com/apps/conversor-coordenadas-geograficas-utm.html" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/535/535239.png"><span>Conversor UTM</span>
+      <img src="https://cdn-icons-png.flaticon.com/512/535/535239.png" alt=""><span>Conversor UTM</span>
     </a>
     <a class="card" href="https://webmii.com/?language=es" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/747/747310.png"><span>Webmii</span>
+      <img src="https://cdn-icons-png.flaticon.com/512/747/747310.png" alt=""><span>Webmii</span>
     </a>
   </div>
 
-  <!-- Service Worker -->
+  <!-- Service Worker registro (no tocar) -->
   <script>
-    if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.register("service-worker.js")
-        .then(() => console.log("Service Worker registrado"))
-        .catch(err => console.error("Error registrando SW:", err));
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(()=>console.log('SW registrado'))
+        .catch(e=>console.warn('SW error',e));
     }
-    body {
-    position: relative;
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
-}
-
-/* Marca de agua */
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url("logo-os9.jpeg") no-repeat center center;
-    background-size: 40%; /* tamaño base en pantallas grandes */
-    opacity: 0.08; /* Transparencia de marca de agua */
-    z-index: -1; /* lo manda atrás del contenido */
-    pointer-events: none; /* evita que bloquee clics */
-}
-
-/* Ajustes responsive */
-@media (max-width: 1024px) {
-    body::before {
-        background-size: 55%; /* tablets */
-    }
-}
-
-@media (max-width: 768px) {
-    body::before {
-        background-size: 70%; /* celulares grandes */
-    }
-}
-
-@media (max-width: 480px) {
-    body::before {
-        background-size: 90%; /* celulares pequeños */
-    }
-}
-
   </script>
 </body>
 </html>
