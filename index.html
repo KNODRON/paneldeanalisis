@@ -189,6 +189,12 @@
     <a class="card" href="http://telefoniaip.carabineros.cl/" target="_blank">
       <img src="icon-telefoniaip.png" alt="Telefonía IP"><span>Telefonía IP</span>
     </a>
+
+    <!-- AQUI: nuevo botón que abre modal con tabla de teléfonos (no modifica estilos existentes) -->
+    <a class="card" href="#" data-action="modal" data-key="telefonos_autopistas">
+      <img src="icon-mtt.png" alt="Teléfonos Autopistas"><span>Teléfonos Autopistas</span>
+    </a>
+
   </div>
 
   <!-- FACEBOOK -->
@@ -275,6 +281,111 @@
       <img src="https://cdn-icons-png.flaticon.com/512/747/747310.png" alt=""><span>Webmii</span>
     </a>
   </div>
+
+  <!-- ====== MODAL (insertado sin tocar el resto de la página) ====== -->
+  <div id="osint-modal" aria-hidden="true" style="display:none;">
+    <div id="osint-modal-backdrop" style="
+         position:fixed; inset:0; background:rgba(0,0,0,0.45); z-index:9998; display:flex;
+         align-items:center; justify-content:center; padding:20px;">
+      <div id="osint-modal-box" role="dialog" aria-modal="true" style="
+           width:100%; max-width:640px; background:#fff; border-radius:8px; padding:18px;
+           box-shadow:0 10px 30px rgba(0,0,0,0.25); position:relative;">
+        <button id="osint-modal-close" aria-label="Cerrar" style="
+                position:absolute; right:10px; top:10px; background:none; border:none; font-size:18px; cursor:pointer;">
+          ✕
+        </button>
+        <h3 id="osint-modal-title" style="margin:0 0 10px 0; font-size:18px;"></h3>
+        <div id="osint-modal-content" style="font-size:14px; color:#222; line-height:1.4;"></div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    /* inline info (no usado ahora, pero útil en caso quieras expand inline) */
+    .inline-info { display:none; padding:12px; margin-top:8px; background:rgba(255,255,255,0.95); border-radius:8px; box-shadow:0 3px 8px rgba(0,0,0,0.06); font-size:14px; }
+    .inline-info.open { display:block; }
+  </style>
+
+  <script>
+  /* Contenido de modales / inline (añade más claves si quieres más botones) */
+  const OSINT_CONTENT = {
+    telefonos_autopistas: {
+      title: 'TELÉFONOS AUTOPISTAS',
+      html: `
+        <style>
+          .t-autopistas { width:100%; border-collapse: collapse; font-size:14px; }
+          .t-autopistas th {
+            background:#1f6b3a; color:#fff; padding:8px 10px; text-align:left;
+            font-weight:700; font-size:15px;
+          }
+          .t-autopistas td { padding:8px 10px; border:1px solid #e6efe6; background:#fff; vertical-align:middle; }
+          .t-autopistas tr:nth-child(even) td { background:#fbfbfb; }
+          .t-autopistas caption { caption-side: top; font-weight:700; margin-bottom:8px; color:#174b2b; font-size:16px; }
+          .small-note { margin-top:10px; font-size:13px; color:#444; }
+        </style>
+
+        <table class="t-autopistas" role="table" aria-label="Teléfonos Autopistas">
+          <caption>TELÉFONOS AUTOPISTAS</caption>
+          <thead>
+            <tr>
+              <th style="width:8%;">Nro.</th>
+              <th style="width:62%;">AUTOPISTA</th>
+              <th style="width:30%;">TELÉFONO</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>AUTOPISTA CENTRAL</td><td>224223933</td></tr>
+            <tr><td>2</td><td>VESPÚCIO SUR</td><td>226943403</td></tr>
+            <tr><td>3</td><td>VESPÚCIO NORTE</td><td>224900762</td></tr>
+            <tr><td>4</td><td>COSTANERA NORTE</td><td>225713004</td></tr>
+            <tr><td>5</td><td>AUTOPISTA DEL MAIPO</td><td>224900854</td></tr>
+            <tr><td>6</td><td>RUTA 68</td><td>228903194</td></tr>
+            <tr><td>7</td><td>PASE DIARIO</td><td>6004000600</td></tr>
+          </tbody>
+        </table>
+
+        <p class="small-note">Si necesitas actualizar o agregar números, pásame los cambios y lo actualizo.</p>
+      `
+    }
+    /* puedes agregar más entradas aquí si quieres otros modales/inline */
+  };
+
+  /* Funciones modal */
+  function openModal(key){
+    const data = OSINT_CONTENT[key];
+    if(!data) return;
+    const modal = document.getElementById('osint-modal');
+    document.getElementById('osint-modal-title').innerText = data.title || '';
+    document.getElementById('osint-modal-content').innerHTML = data.html || '';
+    modal.style.display = 'block';
+    modal.setAttribute('aria-hidden','false');
+    // focus for accessibility
+    document.getElementById('osint-modal-close').focus();
+  }
+  function closeModal(){
+    const modal = document.getElementById('osint-modal');
+    modal.style.display = 'none';
+    modal.setAttribute('aria-hidden','true');
+  }
+
+  document.addEventListener('DOMContentLoaded', ()=> {
+    // close handlers
+    document.getElementById('osint-modal-close').addEventListener('click', closeModal);
+    document.getElementById('osint-modal-backdrop').addEventListener('click', (e)=>{
+      if(e.target.id === 'osint-modal-backdrop') closeModal();
+    });
+    document.addEventListener('keydown', (e)=> { if(e.key === 'Escape') closeModal(); });
+
+    // wire cards with data-action="modal"
+    document.querySelectorAll('.card[data-action="modal"]').forEach(card=>{
+      card.addEventListener('click', function(evt){
+        evt.preventDefault();
+        const key = card.getAttribute('data-key');
+        if(key) openModal(key);
+      });
+    });
+  });
+  </script>
 
   <!-- Service Worker registro (no tocar) -->
   <script>
