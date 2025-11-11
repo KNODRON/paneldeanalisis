@@ -201,6 +201,11 @@
       <img src="icon-tag.png" alt="Teléfonos Autopistas"><span>Teléfonos Autopistas</span>
     </a>
 
+    <!-- BOTÓN NUEVO (va después del de Teléfonos Autopistas) -->
+    <a class="card" href="#" data-action="modal" data-key="telefonos_interes">
+      <img src="icon-tag.png" alt="Teléfonos de Interés"><span>Teléfonos de Interés</span>
+    </a>
+
   </div>
 
   <!-- FACEBOOK -->
@@ -345,10 +350,14 @@
             <tr><td>1</td><td>AUTOPISTA CENTRAL</td><td>224223933</td></tr>
             <tr><td>2</td><td>VESPÚCIO SUR</td><td>226943403</td></tr>
             <tr><td>3</td><td>VESPÚCIO NORTE</td><td>225713004</td></tr>
+            <tr><td>3</td><td>VESPÚCIO ORIENTE</td><td>225477777</td></tr>
             <tr><td>4</td><td>COSTANERA NORTE</td><td>224900854</td></tr>
             <tr><td>5</td><td>AUTOPISTA DEL MAIPO</td><td>228903194</td></tr>
             <tr><td>6</td><td>AUTOPISTA DEL SOL</td><td>229155919</td></tr>
             <tr><td>7</td><td>ASISTENCIA AUTOPISTA DEL SOL</td><td>228325500</td></tr>
+            <tr><td>7</td><td>AUTOPISTA ACONCAGUA</td><td>224620950</td></tr>
+            <tr><td>7</td><td>AUTOPISTA LOS LIBERTADORES</td><td>227333101</td></tr>
+            <tr><td>7</td><td>AUTOPISTA NORORIENTE</td><td>227455736</td></tr>
             <tr><td>8</td><td>RUTA 68</td><td>226800001 / 226800002</td></tr>
             <tr><td>9</td><td>PASE DIARIO</td><td>6004000600</td></tr>
             
@@ -359,6 +368,43 @@
       `
     }
     /* puedes agregar más entradas aquí si quieres otros modales/inline */
+    telefonos_interes: {
+  title: 'TELÉFONOS DE INTERÉS',
+  html: `
+    <style>
+      .t-interes { width:100%; border-collapse: collapse; font-size:14px; }
+      .t-interes th {
+        background:#1f6b3a; color:#fff; padding:8px 10px; text-align:left;
+        font-weight:700; font-size:15px;
+      }
+      .t-interes td { padding:8px 10px; border:1px solid #e6efe6; background:#fff; vertical-align:middle; }
+      .t-interes tr:nth-child(even) td { background:#fbfbfb; }
+      .t-interes caption { caption-side: top; font-weight:700; margin-bottom:8px; color:#174b2b; font-size:16px; }
+      .small-note { margin-top:10px; font-size:13px; color:#444; }
+    </style>
+
+    <table class="t-interes" role="table" aria-label="Teléfonos de Interés">
+      <caption>TELÉFONOS DE INTERÉS</caption>
+      <thead>
+        <tr>
+          <th style="width:25%;">INSTITUCIÓN</th>
+          <th style="width:50%;">DEPENDENCIA / CONTACTO</th>
+          <th style="width:25%;">TELÉFONO / EMAIL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>SENAME</td><td>SAN JOAQUÍN</td><td>225898553</td></tr>
+        <tr><td>SENAME</td><td>SAN BERNARDO</td><td>225932379 / 225923341</td></tr>
+        <tr><td>SENAME</td><td>TIL TIL</td><td>223522400 / 223522418</td></tr>
+        <tr><td>GENDARMERÍA</td><td>—</td><td>56227135284</td></tr>
+        <tr><td>CARABINEROS</td><td>CÁMARAS TRANSANTIAGO</td><td>224213000 anexo 8530</td></tr>
+        <tr><td>METBUS</td><td>Correo Operaciones</td><td><a href="mailto:cof@metbus.cl">cof@metbus.cl</a> / 28177998</td></tr>
+      </tbody>
+    </table>
+
+    <p class="small-note">☎️ Información de contacto útil para coordinación interinstitucional.</p>
+  `
+}
   };
 
   /* Funciones modal */
