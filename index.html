@@ -212,6 +212,11 @@
       <img src="icon-telefono.png" alt="Teléfonos de Interés"><span>Teléfonos de Interés</span>
     </a>
 
+    <!-- BOTÓN NUEVO (Correos de Interés) -->
+    <a class="card" href="#" data-action="modal" data-key="correos_interes">
+      <img src="icon-tag.png" alt="Correos de Interés"><span>Correos de Interés</span>
+    </a>
+
   </div>
 
   <!-- FACEBOOK -->
@@ -415,6 +420,43 @@
     </table>
 
     <p class="small-note">🚓 🐺 ☎️ 📶 📞 📲 📳 🐺 🚓 ☎️ 📶 📞 📲 📳 🐺 🚓 ☎️ 📶 📞 📲 📳 🐺 🚓 ☎️ 📶 📞 📲 🐺 🚓.</p>
+  `
+},
+    // 👈 coma importante para separar el bloque anterior
+correos_interes: {
+  title: 'CORREOS DE INTERÉS',
+  html: `
+    <style>
+      .t-correos { width:100%; border-collapse: collapse; font-size:14px; }
+      .t-correos th {
+        background:#1f6b3a; color:#fff; padding:8px 10px; text-align:left;
+        font-weight:700; font-size:15px;
+      }
+      .t-correos td { padding:8px 10px; border:1px solid #e6efe6; background:#fff; vertical-align:middle; }
+      .t-correos tr:nth-child(even) td { background:#fbfbfb; }
+      .t-correos caption { caption-side: top; font-weight:700; margin-bottom:8px; color:#174b2b; font-size:16px; }
+      .small-note { margin-top:10px; font-size:13px; color:#444; }
+      a.mail-link { color:#007639; text-decoration:none; font-weight:600; }
+      a.mail-link:hover { text-decoration:underline; }
+    </style>
+
+    <table class="t-correos" role="table" aria-label="Correos de Interés">
+      <caption>CORREOS DE INTERÉS</caption>
+      <thead>
+        <tr>
+          <th style="width:25%;">ENTIDAD</th>
+          <th style="width:35%;">CONTACTO / DEPENDENCIA</th>
+          <th style="width:40%;">CORREO / TELÉFONO</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>GENDARMERÍA – TOBILLERA</td><td>Jefe Dpto. de Monitoreo Telemático</td><td>Pablo Gaete Letelier<br>56229163147<br><a href="mailto:pablo.gaete@gendarmeria.cl" class="mail-link">pablo.gaete@gendarmeria.cl</a><br><i>Términos del requerimiento: autorización judicial explícita del Tribunal de Garantía.</i></td></tr>
+        <tr><td>COMISARÍA VIRTUAL</td><td>—</td><td><a href="mailto:ordenesjudiciales.comvirtual@carabineros.cl" class="mail-link">ordenesjudiciales.comvirtual@carabineros.cl</a><br><i>Requiere instrucción particular de Fiscalía.</i></td></tr>
+        <tr><td>JEFE DE PEAJES RUTA DEL MAIPO</td><td>Jorge Correa Muñoz</td><td>56225993567 / 56228903103<br><a href="mailto:jcorrea@intervialchile.cl" class="mail-link">jcorrea@intervialchile.cl</a></td></tr>
+      </tbody>
+    </table>
+
+    <p class="small-note">📧 Información de contacto interinstitucional actualizada — Sección Análisis e Inteligencia Criminal.</p>
   `
 }
   };
