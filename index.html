@@ -202,6 +202,11 @@
       <img src="icon-telefoniaip.png" alt="Telefonía IP"><span>Telefonía IP</span>
     </a>
 
+    <a class="card" href="#" data-action="modal" data-key="correos_formatos">
+      <img src="icon-mail.png" alt="Correos con formatos">
+      <span>Correos con Formatos</span>
+    </a>
+
     <!-- AQUI: nuevo botón que abre modal con tabla de teléfonos (no modifica estilos existentes) -->
     <a class="card" href="#" data-action="modal" data-key="telefonos_autopistas">
       <img src="icon-tag.png" alt="Teléfonos Autopistas"><span>Teléfonos Autopistas</span>
@@ -469,6 +474,63 @@ correos_interes: {
     </table>
 
     <p class="small-note">📧.</p>
+  `
+},
+
+correos_formatos: {
+  title: 'CORREOS CON FORMATOS',
+  html: `
+    <style>
+      .t-formatos { width:100%; border-collapse: collapse; font-size:14px; }
+      .t-formatos th {
+        background:#1f6b3a; color:#fff; padding:8px 10px; text-align:left;
+        font-weight:700; font-size:15px;
+      }
+      .t-formatos td {
+        padding:10px; border:1px solid #e6efe6; background:#fff; vertical-align:middle;
+      }
+      .t-formatos tr:nth-child(even) td { background:#fbfbfb; }
+      .t-formatos caption {
+        caption-side: top; font-weight:700; margin-bottom:10px;
+        color:#174b2b; font-size:16px;
+      }
+      .btn-descargar {
+        display:inline-block; padding:6px 12px; background:#007639;
+        color:#fff; border-radius:6px; text-decoration:none;
+        font-size:13px; font-weight:700;
+      }
+      .btn-descargar:hover {
+        background:#005f2b;
+      }
+    </style>
+
+    <table class="t-formatos" role="table">
+      <caption>FORMATOS DISPONIBLES</caption>
+      <thead>
+        <tr>
+          <th>FORMATO</th>
+          <th>DESCARGAR</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Alerta Morada</td>
+          <td>
+            <a class="btn-descargar" href="MODELO PARA ALERTA MORADA.docx" download>
+              Descargar
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>Alerta Azul</td>
+          <td>
+            <a class="btn-descargar" href="MODELO PARA ALERTA AZUL (1).docx" download>
+              Descargar
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   `
 }
   };
