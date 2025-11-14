@@ -312,168 +312,181 @@ const OSINT_CONTENT = {
     `
   },
 
-  /* ===========================
-      TELÉFONOS DE INTERÉS
-  ============================ */
-  telefonos_interes: {
-    title: "TELÉFONOS DE INTERÉS",
-    html: `
-      <style>
-        .tbl { width:100%; border-collapse:collapse; font-size:14px; }
-        .tbl th {
-          background:#1f6b3a; color:#fff; padding:8px;
-        }
-        .tbl td { padding:8px; border:1px solid #e6efe6; }
-        .tbl tr:nth-child(even) td { background:#f9f9f9; }
-      </style>
+/* puedes agregar más entradas aquí si quieres otros modales/inline */
+    telefonos_interes: {
+  title: 'TELÉFONOS DE INTERÉS',
+  html: `
+    <style>
+      .t-interes { width:100%; border-collapse: collapse; font-size:14px; }
+      .t-interes th {
+        background:#1f6b3a; color:#fff; padding:8px 10px; text-align:left;
+        font-weight:700; font-size:15px;
+      }
+      .t-interes td { padding:8px 10px; border:1px solid #e6efe6; background:#fff; vertical-align:middle; }
+      .t-interes tr:nth-child(even) td { background:#fbfbfb; }
+      .t-interes caption { caption-side: top; font-weight:700; margin-bottom:8px; color:#174b2b; font-size:16px; }
+      .small-note { margin-top:10px; font-size:13px; color:#444; }
+    </style>
 
-      <table class="tbl">
-        <thead>
-          <tr>
-            <th>Institución</th>
-            <th>Dependencia / Email</th>
-            <th>Teléfono</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>SENAME</td><td>San Joaquín</td><td>225898853</td></tr>
-          <tr><td>SENAME</td><td>San Bernardo</td><td>225923279</td></tr>
-          <tr><td>Gendarmería</td><td>—</td><td>227135284</td></tr>
-        </tbody>
-      </table>
-    `
-  },
+    <table class="t-interes" role="table" aria-label="Teléfonos de Interés">
+      <caption>TELÉFONOS DE INTERÉS</caption>
+      <thead>
+        <tr>
+          <th style="width:25%;">INSTITUCIÓN</th>
+          <th style="width:50%;">DEPENDENCIA / EMAIL</th>
+          <th style="width:25%;">TELÉFONO</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>SENAME</td><td>SAN JOAQUÍN</td><td>225898853</td></tr>
+        <tr><td>SENAME</td><td>SAN BERNARDO</td><td>225923279 / 225923341</td></tr>
+        <tr><td>SENAME</td><td>TIL TIL</td><td>223522400 / 223522418</td></tr>
+        <tr><td>GENDARMERÍA</td><td>—</td><td>227135284</td></tr>
+        <tr><td>CÁMARAS TRANSANTIAGO</td><td>CARABINERO DE SERVICIO</td><td>224213000 anexo 8530</td></tr>
+        <tr><td>METBUS</td><td><a href="mailto:cof@metbus.cl">cof@metbus.cl</a></td><td>228177998</td></tr>
+        <tr><td>STP</td><td>TRANSANTIAGO</td><td>224119593</td></tr>
+        <tr><td>SUBUS</td><td>TRANSANTIAGO</td><td>224131822</td></tr>
+        <tr><td>MALL PLAZA</td><td><a href="mailto:ext_jpacheco@mallplaza.com">ext_jpacheco@mallplaza.com</a></td><td>956151894 / 950000854</td></tr>
+        <tr><td>METROPOL</td><td>—</td><td>987043775</td></tr>
+        <tr><td>UOCT</td><td>CENTRAL CÁMARAS</td><td>229224989</td></tr>
+        <tr><td>CÁMARAS RP</td><td>IP</td><td>229222337</td></tr>
+      </tbody>
+    </table>
 
-  /* ===========================
-      CORREOS DE INTERÉS
-  ============================ */
-  correos_interes: {
-    title: "CORREOS DE INTERÉS",
-    html: `
-      <style>
-        .tbl { width:100%; border-collapse: collapse; font-size:14px; }
-        .tbl th {
-          background:#1f6b3a; color:#fff; padding:8px;
-        }
-        .tbl td { padding:8px; border:1px solid #e6efe6; }
-        .tbl tr:nth-child(even) td { background:#f9f9f9; }
-      </style>
+    <p class="small-note">☎️.</p>
+  `
+},
+    // 👈 coma importante para separar el bloque anterior
+correos_interes: {
+  title: 'CORREOS DE INTERÉS',
+  html: `
+    <style>
+      .t-correos { width:100%; border-collapse: collapse; font-size:14px; }
+      .t-correos th {
+        background:#1f6b3a; color:#fff; padding:8px 10px; text-align:left;
+        font-weight:700; font-size:15px;
+      }
+      .t-correos td { padding:8px 10px; border:1px solid #e6efe6; background:#fff; vertical-align:middle; }
+      .t-correos tr:nth-child(even) td { background:#fbfbfb; }
+      .t-correos caption { caption-side: top; font-weight:700; margin-bottom:8px; color:#174b2b; font-size:16px; }
+      .small-note { margin-top:10px; font-size:13px; color:#444; }
+      a.mail-link { color:#007639; text-decoration:none; font-weight:600; }
+      a.mail-link:hover { text-decoration:underline; }
+    </style>
 
-      <table class="tbl">
-        <thead>
-          <tr>
-            <th>Entidad</th>
-            <th>Contacto</th>
-            <th>Correo / Teléfono</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Gendarmería – Tobillera</td>
-            <td>Pablo Gaete</td>
-            <td>
-              <a href="mailto:pablo.gaete@gendarmeria.cl">pablo.gaete@gendarmeria.cl</a><br>
-              229163147
-            </td>
-          </tr>
-          <tr>
-            <td>Comisaría Virtual</td>
-            <td>—</td>
-            <td><a href="mailto:ordenesjudiciales.comvirtual@carabineros.cl">ordenesjudiciales.comvirtual@carabineros.cl</a></td>
-          </tr>
-        </tbody>
-      </table>
-    `
-  },
+    <table class="t-correos" role="table" aria-label="Correos de Interés">
+      <caption>CORREOS DE INTERÉS</caption>
+      <thead>
+        <tr>
+          <th style="width:25%;">ENTIDAD</th>
+          <th style="width:35%;">CONTACTO / DEPENDENCIA</th>
+          <th style="width:40%;">CORREO / TELÉFONO</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>GENDARMERÍA – TOBILLERA</td><td>Jefe Dpto. de Monitoreo Telemático</td><td>Pablo Gaete Letelier<br>229163147<br><a href="mailto:pablo.gaete@gendarmeria.cl" class="mail-link">pablo.gaete@gendarmeria.cl</a><br><i>Términos del requerimiento: autorización judicial explícita del Tribunal de Garantía.</i></td></tr>
+        <tr><td>COMISARÍA VIRTUAL</td><td>—</td><td><a href="mailto:ordenesjudiciales.comvirtual@carabineros.cl" class="mail-link">ordenesjudiciales.comvirtual@carabineros.cl</a><br><i>Requiere instrucción particular de Fiscalía.</i></td></tr>
+        <tr><td>APP YAPO</td><td>—</td><td><a href="incidencias@yapo.cl" class="mail-link">incidencias@yapo.cl</a><br><i>Con IP a adevintachile-yapo.cl, a ese correo y tambien a natalia.weber@adevinta.com.</i></td></tr>
+        <tr><td>JEFE DE PEAJES RUTA DEL MAIPO</td><td>Jorge Correa Muñoz</td><td>56225993567 / 56228903103<br><a href="mailto:jcorrea@intervialchile.cl" class="mail-link">jcorrea@intervialchile.cl</a></td></tr>
+        <tr><td>BUSES RED</td><td>Para solicitud de registros filmicos de camaras de buses</td><td>-<br><a href="mailto:supervisorcofstp@stpsantiago.cl" class="mail-link">supervisorcofstp@stpsantiago.cl</a></td></tr>
+        <tr><td>METRO DE SANTIAGO</td><td>Solicitud de cámaras al interior de metro</td><td>pburgos@metro.cl<br><a href="mailto:jabarca@metro.cl" class="mail-link">jabarca@metro.cl</a></td></tr>
+        <tr><td>COMPAÑÍA CLARO</td><td>Solicitud datos telefónicos</td><td>-<br><a href="mailto:info.judicial@clarochile.cl" class="mail-link">info.judicial@clarochile.cl</a></td></tr>
+        <tr><td>COMPAÑÍA MOVISTAR</td><td>Solicitud datos telefónicos</td><td>-<br><a href="mailto:r.judicialeschile@telefonica.com" class="mail-link">r.judicialeschile@telefonica.com</a></td></tr>
+        <tr><td>COMPAÑÍA ENTEL</td><td>Solicitud datos telefónicos</td><td>-<br><a href="mailto:soperacional@entel.cl" class="mail-link">soperacional@entel.cl</a></td></tr>
+        <tr><td>COMPAÑÍA VIRGIN</td><td>Solicitud datos telefónicos</td><td>-<br><a href="mailto:procesointer@virginmobile.cl" class="mail-link">procesointer@virginmobile.cl</a></td></tr>
+        <tr><td>MUNICIPALIDAD PROVIDENCIA</td><td>Solicitud pórticos Providencia</td><td>-<br><a href="archivos1414@seguridadprovidencia.cl" class="mail-link">archivos1414@seguridadprovidencia.cl</a></td></tr>
+        <tr><td>SONDA</td><td>Tarjetas BIP y GPS transantiago</td><td>-<br><a href="edson.diaz@sonda.com" class="mail-link">edson.diaz@sonda.com</a></td></tr>
+        <tr><td>MERCADO LIBRE</td><td>Solicitud con Orden de Investigar</td><td>-<br><a href="tania.villegas@mercadolibre.cl" class="mail-link">tania.villegas@mercadolibre.cl</a></td></tr>
+        <tr><td>ENEL</td><td>Información de clientes con Orden de Investigar</td><td>-<br><a href="clientes@enel.com" class="mail-link">clientes@enel.com</a></td></tr>        
+      </tbody>
+    </table>
 
-  /* ===========================
-      CORREOS CON FORMATOS (WORD)
-  ============================ */
-  correos_formatos: {
-    title: "CORREOS CON FORMATOS",
-    html: `
-      <style>
-        .tbl { width:100%; border-collapse:collapse; font-size:14px; }
-        .tbl th {
-          background:#1f6b3a; color:#fff; padding:8px;
-        }
-        .tbl td { padding:8px; border:1px solid #e6efe6; }
-        .btn-format {
-          display:inline-block; padding:6px 12px; background:#007639;
-          color:#fff; border-radius:6px; text-decoration:none;
-          font-size:13px; margin-right:6px;
-        }
-      </style>
+    <p class="small-note">📧.</p>
+  `
+},
 
-      <table class="tbl">
-        <thead>
-          <tr>
-            <th>Entidad</th>
-            <th>Descripción</th>
-            <th>Correo</th>
-            <th>Formatos</th>
-          </tr>
-        </thead>
+correos_formatos: {
+  title: 'CORREOS CON FORMATOS',
+  html: `
+    <style>
+      .t-formatos2 {
+        width:100%; 
+        border-collapse: collapse; 
+        font-size:14px;
+      }
+      .t-formatos2 th {
+        background:#1f6b3a; 
+        color:#fff; 
+        padding:8px 10px;
+        text-align:left; 
+        font-weight:700; 
+        font-size:15px;
+      }
+      .t-formatos2 td {
+        padding:10px; 
+        border:1px solid #e6efe6; 
+        background:#fff;
+        vertical-align:middle;
+      }
+      .t-formatos2 tr:nth-child(even) td { 
+        background:#fbfbfb; 
+      }
+      .btn-format {
+        display:inline-block; 
+        padding:6px 12px; 
+        background:#007639;
+        color:#fff !important; 
+        border-radius:6px; 
+        text-decoration:none;
+        font-size:13px; 
+        font-weight:700;
+        margin-right:6px;
+      }
+      .btn-format:hover { 
+        background:#005f2b; 
+      }
+    </style>
 
-        <tbody>
-          <tr>
-            <td>INTERPOL</td>
-            <td>Alertas Internacionales</td>
-            <td><a href="mailto:interpol@correo.cl">interpol@correo.cl</a></td>
-            <td>
-              <a class="btn-format" href="MODELO PARA ALERTA MORADA.docx" download>Alerta Morada</a>
-              <a class="btn-format" href="MODELO PARA ALERTA AZUL (1).docx" download>Alerta Azul</a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    `
-  },
+    <table class="t-formatos2" role="table">
+      <thead>
+        <tr>
+          <th style="width:20%;">Entidad</th>
+          <th style="width:35%;">Descripción</th>
+          <th style="width:25%;">Correo</th>
+          <th style="width:20%;">Formatos</th>
+        </tr>
+      </thead>
 
-  /* ===========================
-      NUEVO: PLATAFORMAS OSINT
-  ============================ */
-  plataformas_osint: {
-    title: "PLATAFORMAS OSINT",
-    html: `
-      <style>
-        .osint-grid {
-          display:grid;
-          grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
-          gap:15px; margin-top:15px;
-        }
-        .osint-card {
-          background:#fff; padding:12px; border-radius:8px;
-          box-shadow:0 3px 6px rgba(0,0,0,0.1);
-          text-align:center; cursor:pointer; transition:.2s;
-        }
-        .osint-card:hover { transform:scale(1.05); }
-        .osint-card img { width:46px; height:46px; margin-bottom:6px; }
-      </style>
+      <tbody>
+        <tr>
+          <td>INTERPOL</td>
+          <td>Alertas Internacionales</td>
+          <td>
+            <a href="mailto:interpol@correo.cl">interpol@correo.cl</a>
+          </td>
+          <td>
+            <a class="btn-format" 
+               href="MODELO%20PARA%20ALERTA%20MORADA.docx" 
+               download>
+               Alerta Morada
+            </a>
 
-      <!-- Ejemplo reducido, tú puedes agregar más -->
-      <h4>Facebook</h4>
-      <div class="osint-grid">
-        <a class="osint-card" href="https://www.sowsearch.info" target="_blank">
-          <img src="icon-facebook.png">Sowsearch
-        </a>
-        <a class="osint-card" href="https://www.plessas.net/facebookmatrix" target="_blank">
-          <img src="icon-facebook.png">Matrix
-        </a>
-      </div>
+            <a class="btn-format" 
+               href="MODELO%20PARA%20ALERTA%20AZUL%20(1).docx" 
+               download>
+               Alerta Azul
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
 
-      <h4>Imagen</h4>
-      <div class="osint-grid">
-        <a class="osint-card" href="https://www.facesearchai.com/" target="_blank">
-          <img src="icon-face.png">FaceSearch
-        </a>
-        <a class="osint-card" href="https://imgops.com/" target="_blank">
-          <img src="icon-imgops.png">ImgOps
-        </a>
-      </div>
-    `
-  }
-};
+    <p style="font-size:13px; color:#444; margin-top:10px;">
+      Los archivos se descargan directamente en formato Word (*.docx).
+    </p>
+  `
+}
+  };
 
 
 /* ===========================
