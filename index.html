@@ -5,10 +5,9 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Panel de Herramientas</title>
   <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#ff6600">
+  <meta name="theme-color" content="#007639">
 
   <style>
-    /* ========= Básicos y layout ========= */
     :root{
       --header-bg: #007639;
       --section-bg: #00b894;
@@ -23,30 +22,22 @@
       background: var(--page-bg);
     }
 
-    /* Marca de agua (logo) - se aplica en pseudo-elemento para no afectar contenido */
+    /* Marca de agua */
     body::before {
       content: "";
       position: fixed;
       inset: 0;
       background: url("logo-os9.jpeg") no-repeat center center;
-      background-size: 40%; /* tamaño base para desktop */
-      opacity: 0.20;        /* ajusta esto si quieres más/menos visibilidad */
+      background-size: 40%;
+      opacity: 0.20;
       z-index: -1;
       pointer-events: none;
     }
 
-    /* responsive adjustments for watermark */
-    @media (max-width: 1024px) {
-      body::before { background-size: 55%; }
-    }
-    @media (max-width: 768px) {
-      body::before { background-size: 70%; }
-    }
-    @media (max-width: 480px) {
-      body::before { background-size: 90%; }
-    }
+    @media (max-width: 1024px) { body::before { background-size: 55%; } }
+    @media (max-width: 768px) { body::before { background-size: 70%; } }
+    @media (max-width: 480px) { body::before { background-size: 90%; } }
 
-    /* Header */
     header {
       background: var(--header-bg);
       color: #fff;
@@ -55,10 +46,9 @@
       font-weight: 700;
       text-align: center;
       position: relative;
-      z-index: 2; /* por encima de la marca de agua */
+      z-index: 2;
     }
 
-    /* Secciones */
     h2 {
       background: var(--section-bg);
       color: #fff;
@@ -102,7 +92,6 @@
       height: 60px;
       object-fit: contain;
       margin-bottom: 10px;
-      filter: none; /* si quieres iconos verdes-blanco, sube PNGs ya preparados */
     }
     .card span{
       display:block;
@@ -112,7 +101,6 @@
       padding: 0 6px;
     }
 
-    /* Mobile tweaks */
     @media (max-width:420px){
       .card img { width:54px; height:54px; }
       .grid { gap:16px; padding:16px; }
@@ -120,616 +108,420 @@
     }
   </style>
 </head>
+
 <body>
-  <header>🐺           ACCESOS DIRECTOS SECCIÓN ANÁLISIS           🐺</header>
 
-  <!-- USO DIARIO -->
-  <h2>Sección Análisis e Inteligencia Criminal</h2>
-  <div class="grid">
+<header>🐺 ACCESOS DIRECTOS SECCIÓN ANÁLISIS 🐺</header>
+
+<h2>Sección Análisis e Inteligencia Criminal</h2>
+
+<div class="grid">
+
+    <!-- === BOTONES PRINCIPALES (GRID) === -->
+
+    <!-- BOTONES DIARIOS -->
     <a class="card" href="http://doe.carabineros.cl/" target="_blank">
-      <img src="icon-doe.png" alt="Documentación Electrónica"><span>Documentación Electrónica</span>
+      <img src="icon-doe.png"><span>Documentación Electrónica</span>
     </a>
+
     <a class="card" href="http://sicpol.carabineros.cl/" target="_blank">
-      <img src="icon-sicpol.png" alt="SICPOL"><span>SICPOL</span>
+      <img src="icon-sicpol.png"><span>SICPOL</span>
     </a>
+
     <a class="card" href="http://scic.carabineros.cl/scicd/login.php" target="_blank">
-      <img src="icon-scic.png" alt="SCIC"><span>SCIC</span>
+      <img src="icon-scic.png"><span>SCIC</span>
     </a>
+
     <a class="card" href="http://monitoweb.srcei.cl/monito/121/92/135c6582.mon" target="_blank">
-      <img src="icon-monito.png" alt="MonitoWeb"><span>MonitoWeb</span>
+      <img src="icon-monito.png"><span>MonitoWeb</span>
     </a>
+
     <a class="card" href="http://10.190.9.11:7777/login/LoginOracle.html" target="_blank">
-      <img src="icon-bud.png" alt="BUD"><span>BUD</span>
+      <img src="icon-bud.png"><span>BUD</span>
     </a>
+
     <a class="card" href="https://web.whatsapp.com/" target="_blank">
-      <img src="icon-WhatsApp.png" alt="WhatsApp"><span>WhatsApp</span>
+      <img src="icon-WhatsApp.png"><span>WhatsApp</span>
     </a>
+
     <a class="card" href="http://geminis.si2.cl:8080/#/" target="_blank">
-      <img src="gemini.png" alt="Gemini"><span>Gemini</span>
+      <img src="gemini.png"><span>Gemini</span>
     </a>
+
     <a class="card" href="https://www.encargoautoseguro.gob.cl/index.php" target="_blank">
-      <img src="icon-suev.png" alt="SUEV"><span>SUEV</span>
+      <img src="icon-suev.png"><span>SUEV</span>
     </a>
+
     <a class="card" href="http://departamentosebv.carabineros.cl/encargo/datatables/index_sebvp.php" target="_blank">
-      <img src="icon-encargosebv.png" alt="Encargo SEBV"><span>Encargo SEBV</span>
+      <img src="icon-encargosebv.png"><span>Encargo SEBV</span>
     </a>
+
     <a class="card" href="http://sait.carabineros.cl/sait/index.aspx" target="_blank">
-      <img src="icon-sait.png" alt="SAIT"><span>SAIT</span>
+      <img src="icon-sait.png"><span>SAIT</span>
     </a>
+
     <a class="card" href="https://situacionmigratoria.serviciomigraciones.cl/login_inicio" target="_blank">
-      <img src="icon-migratoria.png" alt="Migraciones"><span>Migraciones</span>
+      <img src="icon-migratoria.png"><span>Migraciones</span>
     </a>
+
     <a class="card" href="http://unisag.cormudesi.cl/uniehr/fonasa/view/visor_fonasa.phtml" target="_blank">
-      <img src="icon-fonasa.png" alt="Fonasa"><span>Fonasa</span>
+      <img src="icon-fonasa.png"><span>Fonasa</span>
     </a>
+
     <a class="card" href="https://www.red.cl/resultados/?asp_s=GCBB48" target="_blank">
-      <img src="icon-red.png" alt="Fonasa"><span>Busqueda Recorrido por PPU</span>
+      <img src="icon-red.png"><span>Recorrido por PPU</span>
     </a>
+
     <a class="card" href="https://www4.sii.cl/mapasui/internet/#/contenido/index.html" target="_blank">
-      <img src="icon-siimapas.png" alt="SII Mapas"><span>SII Mapas</span>
+      <img src="icon-siimapas.png"><span>SII Mapas</span>
     </a>
+
     <a class="card" href="https://zeus.sii.cl/avalu_cgi/br/brc801.sh" target="_blank">
-      <img src="icon-siibienraiz.png" alt="SII Bien Raíz"><span>SII Bien Raíz</span>
+      <img src="icon-siibienraiz.png"><span>SII Bien Raíz</span>
     </a>
+
     <a class="card" href="https://zeus.sii.cl/cvc/stc/stc.html" target="_blank">
-      <img src="icon-stributaria.png" alt="SII Situación Tributaria"><span>SII Situación Tributaria</span>
+      <img src="icon-stributaria.png"><span>SII Situación Tributaria</span>
     </a>
+
     <a class="card" href="https://lert.didiglobal.com/CL/login" target="_blank">
-      <img src="icon-didi.png" alt="DiDi"><span>DiDi</span>
+      <img src="icon-didi.png"><span>DiDi</span>
     </a>
+
     <a class="card" href="https://lert.uber.com/s/login/?language=en_US" target="_blank">
-      <img src="icon-uber.png" alt="Uber"><span>Uber</span>
+      <img src="icon-uber.png"><span>Uber</span>
     </a>
+
     <a class="card" href="https://leportal.netflix.com/" target="_blank">
-      <img src="icon-netflix.png" alt="Uber"><span>Netflix</span>
+      <img src="icon-netflix.png"><span>Netflix</span>
     </a>
+
     <a class="card" href="https://www.rteweb.cl/RTEWEB/pages/portal/acceso_portal.jsf" target="_blank">
-      <img src="icon-custodia.png" alt="Uber"><span>Custodia Metropolitana</span>
+      <img src="icon-custodia.png"><span>Custodia Metropolitana</span>
     </a>
+
     <a class="card" href="https://www.registrodeempresasysociedades.cl/BuscarActuaciones.aspx" target="_blank">
-      <img src="icon-empresa.png" alt="Consulta Empresas"><span>Consulta Empresas</span>
+      <img src="icon-empresa.png"><span>Consulta Empresas</span>
     </a>
+
     <a class="card" href="https://apps.mtt.cl/consultaweb/" target="_blank">
-      <img src="icon-mtt.png" alt="Consulta MTT"><span>Consulta MTT</span>
+      <img src="icon-mtt.png"><span>Consulta MTT</span>
     </a>
+
     <a class="card" href="https://www.dateas.com/es" target="_blank">
-      <img src="icon-info.png" alt="Dateas"><span>Dateas</span>
+      <img src="icon-info.png"><span>Dateas</span>
     </a>
+
     <a class="card" href="https://www.nombrerutyfirma.com/" target="_blank">
-      <img src="rutyfirma.png" alt="Nombre RUT Firma"><span>Nombre, RUT y Firma</span>
+      <img src="rutyfirma.png"><span>Nombre, RUT y Firma</span>
     </a>
+
     <a class="card" href="http://telefoniaip.carabineros.cl/" target="_blank">
-      <img src="icon-telefoniaip.png" alt="Telefonía IP"><span>Telefonía IP</span>
+      <img src="icon-telefoniaip.png"><span>Telefonía IP</span>
     </a>
 
-    <a class="card" href="#" data-action="modal" data-key="correos_formatos">
-      <img src="icon-mail.png" alt="Correos con formatos">
-      <span>Correos con Formatos</span>
-    </a>
 
-    <!-- AQUI: nuevo botón que abre modal con tabla de teléfonos (no modifica estilos existentes) -->
+    <!-- === BOTONES CON MODAL === -->
+
+    <!-- Teléfonos Autopistas -->
     <a class="card" href="#" data-action="modal" data-key="telefonos_autopistas">
-      <img src="icon-tag.png" alt="Teléfonos Autopistas"><span>Teléfonos Autopistas</span>
+      <img src="icon-tag.png"><span>Teléfonos Autopistas</span>
     </a>
 
-    <!-- BOTÓN NUEVO (va después del de Teléfonos Autopistas) -->
+    <!-- Teléfonos de Interés -->
     <a class="card" href="#" data-action="modal" data-key="telefonos_interes">
-      <img src="icon-telefono.png" alt="Teléfonos de Interés"><span>Teléfonos de Interés</span>
+      <img src="icon-telefono.png"><span>Teléfonos de Interés</span>
     </a>
 
-    <!-- BOTÓN NUEVO (Correos de Interés) -->
+    <!-- Correos de Interés -->
     <a class="card" href="#" data-action="modal" data-key="correos_interes">
-      <img src="icon-correo.png" alt="Correos de Interés"><span>Correos de Interés</span>
+      <img src="icon-correo.png"><span>Correos de Interés</span>
     </a>
-    <!-- BOTÓN NUEVO: Plataformas OSINT -->
+
+    <!-- Correos con Formatos -->
+    <a class="card" href="#" data-action="modal" data-key="correos_formatos">
+      <img src="icon-mail.png"><span>Correos con Formatos</span>
+    </a>
+
+    <!-- Plataformas OSINT (todo lo que antes estaba abajo) -->
     <a class="card" href="#" data-action="modal" data-key="plataformas_osint">
-      <img src="icon-osint.png" alt="Plataformas OSINT">
-      <span>Plataformas OSINT</span>
+      <img src="icon-osint.png"><span>Plataformas OSINT</span>
     </a>
 
+</div> <!-- cierre GRID principal -->
+
+<!-- ====== MODAL UNIVERSAL ====== -->
+<div id="osint-modal" aria-hidden="true" style="display:none;">
+  <div id="osint-modal-backdrop" style="
+      position:fixed; inset:0; background:rgba(0,0,0,0.45);
+      z-index:9998; display:flex; align-items:center;
+      justify-content:center; padding:20px;">
+      
+    <div id="osint-modal-box" style="
+        width:100%; max-width:640px; max-height:85vh; overflow-y:auto;
+        background:#fff; border-radius:10px; padding:20px;
+        box-shadow:0 10px 30px rgba(0,0,0,0.25); position:relative;">
+      
+      <button id="osint-modal-close" aria-label="Cerrar" style="
+          position:absolute; right:12px; top:12px; background:none;
+          border:none; font-size:20px; cursor:pointer;">✕</button>
+
+      <h3 id="osint-modal-title" style="margin:0 0 12px 0; font-size:18px;"></h3>
+      <div id="osint-modal-content" style="font-size:14px; color:#222;"></div>
+    </div>
   </div>
+</div>
 
-  <!-- FACEBOOK -->
-  <h2>Sgto. 2do. Juan Jiménez V. 
-    - Análisis e Inteligencia Criminal</h2>
-  <h2>Facebook</h2>
-  <div class="grid">
-    <a class="card" href="https://www.sowsearch.info" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt=""><span>Sowsearch</span>
-    </a>
-    <a class="card" href="https://www.plessas.net/facebookmatrix" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt=""><span>Facebook Matrix</span>
-    </a>
-    <a class="card" href="https://www.whopostedwhat.com/" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt=""><span>Who Posted What</span>
-    </a>
-  </div>
+<!-- ====== CONTENIDOS DE LOS MODALES ====== -->
+<script>
+const OSINT_CONTENT = {
 
-  <!-- TIKTOK -->
-  <h2>TikTok</h2>
-  <div class="grid">
-    <a class="card" href="https://www.picuki.com" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" alt=""><span>Picuki</span>
-    </a>
-  </div>
+  /* ===========================
+      TELÉFONOS AUTOPISTAS
+  ============================ */
+  telefonos_autopistas: {
+    title: "TELÉFONOS AUTOPISTAS",
+    html: `
+      <style>
+        .tbl { width:100%; border-collapse:collapse; font-size:14px; }
+        .tbl th {
+          background:#1f6b3a; color:#fff; padding:8px;
+          text-align:left; font-size:15px;
+        }
+        .tbl td { padding:8px; border:1px solid #e6efe6; }
+        .tbl tr:nth-child(even) td { background:#f9f9f9; }
+      </style>
 
-  <!-- INSTAGRAM -->
-  <h2>Instagram</h2>
-  <div class="grid">
-    <a class="card" href="https://picuki.site" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt=""><span>Picuki Site</span>
-    </a>
-    <a class="card" href="https://dumpor.io" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt=""><span>Dumpor</span>
-    </a>
-    <a class="card" href="https://gramsnap.com/en" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt=""><span>Gramsnap</span>
-    </a>
-    <a class="card" href="https://indown.io/insta-dp-viewer/es" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt=""><span>Insta DP</span>
-    </a>
-  </div>
+      <table class="tbl">
+        <thead>
+          <tr><th>N°</th><th>Autopista</th><th>Teléfono</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Autopista Central</td><td>224223933</td></tr>
+          <tr><td>2</td><td>Vespucio Sur</td><td>226943403</td></tr>
+          <tr><td>3</td><td>Vespucio Norte</td><td>225713004</td></tr>
+          <tr><td>4</td><td>Vespucio Oriente</td><td>225477777</td></tr>
+          <tr><td>5</td><td>Costanera Norte</td><td>224900854</td></tr>
+          <tr><td>6</td><td>Autopista del Maipo</td><td>228903194</td></tr>
+          <tr><td>7</td><td>Autopista del Sol</td><td>229155919</td></tr>
+          <tr><td>8</td><td>Asistencia Autop. del Sol</td><td>228325500</td></tr>
+          <tr><td>9</td><td>Autopista Aconcagua</td><td>224620950</td></tr>
+          <tr><td>10</td><td>Autopista Los Libertadores</td><td>227333101</td></tr>
+        </tbody>
+      </table>
+    `
+  },
 
-  <!-- HERRAMIENTAS DE IMAGEN -->
-  <h2>Herramientas de Imagen</h2>
-  <div class="grid">
-    <a class="card" href="https://www.facesearchai.com/" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/3600/3600915.png" alt=""><span>Face Search</span>
-    </a>
-    <a class="card" href="https://flickr.com/" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt=""><span>Flickr</span>
-    </a>
-    <a class="card" href="https://imgops.com/" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/1048/1048953.png" alt=""><span>ImgOps</span>
-    </a>
-    <a class="card" href="https://tineye.com/" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/709/709699.png" alt=""><span>TinEye</span>
-    </a>
-    <a class="card" href="https://images.google.com/" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/300/300221.png" alt=""><span>Google Img</span>
-    </a>
-    <a class="card" href="https://www.bing.com/images" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/888/888859.png" alt=""><span>Bing Img</span>
-    </a>
-  </div>
+  /* ===========================
+      TELÉFONOS DE INTERÉS
+  ============================ */
+  telefonos_interes: {
+    title: "TELÉFONOS DE INTERÉS",
+    html: `
+      <style>
+        .tbl { width:100%; border-collapse:collapse; font-size:14px; }
+        .tbl th {
+          background:#1f6b3a; color:#fff; padding:8px;
+        }
+        .tbl td { padding:8px; border:1px solid #e6efe6; }
+        .tbl tr:nth-child(even) td { background:#f9f9f9; }
+      </style>
 
-  <!-- OTROS -->
-  <h2>Otros</h2>
-  <div class="grid">
-    <a class="card" href="https://www.osintcombine.com/tools" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/888/888879.png" alt=""><span>OSINT Combine</span>
-    </a>
-    <a class="card" href="https://inteltechniques.com/tools/index.html" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/1021/1021260.png" alt=""><span>IntelTechniques</span>
-    </a>
-    <a class="card" href="https://intelx.io/" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt=""><span>IntelX</span>
-    </a>
-    <a class="card" href="https://www.similarweb.com/" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/1048/1048947.png" alt=""><span>SimilarWeb</span>
-    </a>
-    <a class="card" href="https://franzpc.com/apps/conversor-coordenadas-geograficas-utm.html" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/535/535239.png" alt=""><span>Conversor UTM</span>
-    </a>
-    <a class="card" href="https://webmii.com/?language=es" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/747/747310.png" alt=""><span>Webmii</span>
-    </a>
-  </div>
+      <table class="tbl">
+        <thead>
+          <tr>
+            <th>Institución</th>
+            <th>Dependencia / Email</th>
+            <th>Teléfono</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>SENAME</td><td>San Joaquín</td><td>225898853</td></tr>
+          <tr><td>SENAME</td><td>San Bernardo</td><td>225923279</td></tr>
+          <tr><td>Gendarmería</td><td>—</td><td>227135284</td></tr>
+        </tbody>
+      </table>
+    `
+  },
 
-  <!-- ====== MODAL (insertado sin tocar el resto de la página) ====== -->
-  <div id="osint-modal" aria-hidden="true" style="display:none;">
-    <div id="osint-modal-backdrop" style="
-         position:fixed; inset:0; background:rgba(0,0,0,0.45); z-index:9998; display:flex;
-         align-items:center; justify-content:center; padding:20px;">
-      <div id="osint-modal-box" role="dialog" aria-modal="true" style="
-           width:100%; max-width:640px; max-height:85vh; overflow-y:auto;
-           background:#fff; border-radius:8px; padding:18px;
-           box-shadow:0 10px 30px rgba(0,0,0,0.25); position:relative;">
-        <button id="osint-modal-close" aria-label="Cerrar" style="
-                position:absolute; right:10px; top:10px; background:none; border:none; font-size:18px; cursor:pointer;">
-          ✕
-        </button>
-        <h3 id="osint-modal-title" style="margin:0 0 10px 0; font-size:18px;"></h3>
-        <div id="osint-modal-content" style="font-size:14px; color:#222; line-height:1.4;"></div>
+  /* ===========================
+      CORREOS DE INTERÉS
+  ============================ */
+  correos_interes: {
+    title: "CORREOS DE INTERÉS",
+    html: `
+      <style>
+        .tbl { width:100%; border-collapse: collapse; font-size:14px; }
+        .tbl th {
+          background:#1f6b3a; color:#fff; padding:8px;
+        }
+        .tbl td { padding:8px; border:1px solid #e6efe6; }
+        .tbl tr:nth-child(even) td { background:#f9f9f9; }
+      </style>
+
+      <table class="tbl">
+        <thead>
+          <tr>
+            <th>Entidad</th>
+            <th>Contacto</th>
+            <th>Correo / Teléfono</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Gendarmería – Tobillera</td>
+            <td>Pablo Gaete</td>
+            <td>
+              <a href="mailto:pablo.gaete@gendarmeria.cl">pablo.gaete@gendarmeria.cl</a><br>
+              229163147
+            </td>
+          </tr>
+          <tr>
+            <td>Comisaría Virtual</td>
+            <td>—</td>
+            <td><a href="mailto:ordenesjudiciales.comvirtual@carabineros.cl">ordenesjudiciales.comvirtual@carabineros.cl</a></td>
+          </tr>
+        </tbody>
+      </table>
+    `
+  },
+
+  /* ===========================
+      CORREOS CON FORMATOS (WORD)
+  ============================ */
+  correos_formatos: {
+    title: "CORREOS CON FORMATOS",
+    html: `
+      <style>
+        .tbl { width:100%; border-collapse:collapse; font-size:14px; }
+        .tbl th {
+          background:#1f6b3a; color:#fff; padding:8px;
+        }
+        .tbl td { padding:8px; border:1px solid #e6efe6; }
+        .btn-format {
+          display:inline-block; padding:6px 12px; background:#007639;
+          color:#fff; border-radius:6px; text-decoration:none;
+          font-size:13px; margin-right:6px;
+        }
+      </style>
+
+      <table class="tbl">
+        <thead>
+          <tr>
+            <th>Entidad</th>
+            <th>Descripción</th>
+            <th>Correo</th>
+            <th>Formatos</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>INTERPOL</td>
+            <td>Alertas Internacionales</td>
+            <td><a href="mailto:interpol@correo.cl">interpol@correo.cl</a></td>
+            <td>
+              <a class="btn-format" href="MODELO PARA ALERTA MORADA.docx" download>Alerta Morada</a>
+              <a class="btn-format" href="MODELO PARA ALERTA AZUL (1).docx" download>Alerta Azul</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    `
+  },
+
+  /* ===========================
+      NUEVO: PLATAFORMAS OSINT
+  ============================ */
+  plataformas_osint: {
+    title: "PLATAFORMAS OSINT",
+    html: `
+      <style>
+        .osint-grid {
+          display:grid;
+          grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+          gap:15px; margin-top:15px;
+        }
+        .osint-card {
+          background:#fff; padding:12px; border-radius:8px;
+          box-shadow:0 3px 6px rgba(0,0,0,0.1);
+          text-align:center; cursor:pointer; transition:.2s;
+        }
+        .osint-card:hover { transform:scale(1.05); }
+        .osint-card img { width:46px; height:46px; margin-bottom:6px; }
+      </style>
+
+      <!-- Ejemplo reducido, tú puedes agregar más -->
+      <h4>Facebook</h4>
+      <div class="osint-grid">
+        <a class="osint-card" href="https://www.sowsearch.info" target="_blank">
+          <img src="icon-facebook.png">Sowsearch
+        </a>
+        <a class="osint-card" href="https://www.plessas.net/facebookmatrix" target="_blank">
+          <img src="icon-facebook.png">Matrix
+        </a>
       </div>
-    </div>
-  </div>
 
-  <style>
-    /* inline info (no usado ahora, pero útil en caso quieras expand inline) */
-    .inline-info { display:none; padding:12px; margin-top:8px; background:rgba(255,255,255,0.95); border-radius:8px; box-shadow:0 3px 8px rgba(0,0,0,0.06); font-size:14px; }
-    .inline-info.open { display:block; }
-  </style>
+      <h4>Imagen</h4>
+      <div class="osint-grid">
+        <a class="osint-card" href="https://www.facesearchai.com/" target="_blank">
+          <img src="icon-face.png">FaceSearch
+        </a>
+        <a class="osint-card" href="https://imgops.com/" target="_blank">
+          <img src="icon-imgops.png">ImgOps
+        </a>
+      </div>
+    `
+  }
+};
 
-  <script>
-  /* Contenido de modales / inline (añade más claves si quieres más botones) */
-  const OSINT_CONTENT = {
-    telefonos_autopistas: {
-      title: 'TELÉFONOS AUTOPISTAS',
-      html: `
-        <style>
-          .t-autopistas { width:100%; border-collapse: collapse; font-size:14px; }
-          .t-autopistas th {
-            background:#1f6b3a; color:#fff; padding:8px 10px; text-align:left;
-            font-weight:700; font-size:15px;
-          }
-          .t-autopistas td { padding:8px 10px; border:1px solid #e6efe6; background:#fff; vertical-align:middle; }
-          .t-autopistas tr:nth-child(even) td { background:#fbfbfb; }
-          .t-autopistas caption { caption-side: top; font-weight:700; margin-bottom:8px; color:#174b2b; font-size:16px; }
-          .small-note { margin-top:10px; font-size:13px; color:#444; }
-        </style>
 
-        <table class="t-autopistas" role="table" aria-label="Teléfonos Autopistas">
-          <caption>TELÉFONOS AUTOPISTAS</caption>
-          <thead>
-            <tr>
-              <th style="width:8%;">Nro.</th>
-              <th style="width:62%;">AUTOPISTA</th>
-              <th style="width:30%;">TELÉFONO</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>1</td><td>AUTOPISTA CENTRAL</td><td>224223933</td></tr>
-            <tr><td>2</td><td>VESPÚCIO SUR</td><td>226943403</td></tr>
-            <tr><td>3</td><td>VESPÚCIO NORTE</td><td>225713004</td></tr>
-            <tr><td>3</td><td>VESPÚCIO ORIENTE</td><td>225477777</td></tr>
-            <tr><td>4</td><td>COSTANERA NORTE</td><td>224900854</td></tr>
-            <tr><td>5</td><td>AUTOPISTA DEL MAIPO</td><td>228903194</td></tr>
-            <tr><td>6</td><td>AUTOPISTA DEL SOL</td><td>229155919</td></tr>
-            <tr><td>7</td><td>ASISTENCIA AUTOPISTA DEL SOL</td><td>228325500</td></tr>
-            <tr><td>7</td><td>AUTOPISTA ACONCAGUA</td><td>224620950</td></tr>
-            <tr><td>7</td><td>AUTOPISTA LOS LIBERTADORES</td><td>227333101</td></tr>
-            <tr><td>7</td><td>AUTOPISTA NORORIENTE</td><td>227455736</td></tr>
-            <tr><td>8</td><td>RUTA 68</td><td>226800001 / 226800002</td></tr>
-            <tr><td>9</td><td>PASE DIARIO</td><td>6004000600</td></tr>
-            
-          </tbody>
-        </table>
+/* ===========================
+      FUNCIONES DEL MODAL
+=========================== */
+function openModal(key){
+  const data = OSINT_CONTENT[key];
+  if(!data) return;
 
-        <p class="small-note">.🚗.</p>
-      `
-    },
-    /* puedes agregar más entradas aquí si quieres otros modales/inline */
-    telefonos_interes: {
-  title: 'TELÉFONOS DE INTERÉS',
-  html: `
-    <style>
-      .t-interes { width:100%; border-collapse: collapse; font-size:14px; }
-      .t-interes th {
-        background:#1f6b3a; color:#fff; padding:8px 10px; text-align:left;
-        font-weight:700; font-size:15px;
-      }
-      .t-interes td { padding:8px 10px; border:1px solid #e6efe6; background:#fff; vertical-align:middle; }
-      .t-interes tr:nth-child(even) td { background:#fbfbfb; }
-      .t-interes caption { caption-side: top; font-weight:700; margin-bottom:8px; color:#174b2b; font-size:16px; }
-      .small-note { margin-top:10px; font-size:13px; color:#444; }
-    </style>
+  document.getElementById("osint-modal-title").innerText = data.title;
+  document.getElementById("osint-modal-content").innerHTML = data.html;
 
-    <table class="t-interes" role="table" aria-label="Teléfonos de Interés">
-      <caption>TELÉFONOS DE INTERÉS</caption>
-      <thead>
-        <tr>
-          <th style="width:25%;">INSTITUCIÓN</th>
-          <th style="width:50%;">DEPENDENCIA / EMAIL</th>
-          <th style="width:25%;">TELÉFONO</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>SENAME</td><td>SAN JOAQUÍN</td><td>225898853</td></tr>
-        <tr><td>SENAME</td><td>SAN BERNARDO</td><td>225923279 / 225923341</td></tr>
-        <tr><td>SENAME</td><td>TIL TIL</td><td>223522400 / 223522418</td></tr>
-        <tr><td>GENDARMERÍA</td><td>—</td><td>227135284</td></tr>
-        <tr><td>CÁMARAS TRANSANTIAGO</td><td>CARABINERO DE SERVICIO</td><td>224213000 anexo 8530</td></tr>
-        <tr><td>METBUS</td><td><a href="mailto:cof@metbus.cl">cof@metbus.cl</a></td><td>228177998</td></tr>
-        <tr><td>STP</td><td>TRANSANTIAGO</td><td>224119593</td></tr>
-        <tr><td>SUBUS</td><td>TRANSANTIAGO</td><td>224131822</td></tr>
-        <tr><td>MALL PLAZA</td><td><a href="mailto:ext_jpacheco@mallplaza.com">ext_jpacheco@mallplaza.com</a></td><td>956151894 / 950000854</td></tr>
-        <tr><td>METROPOL</td><td>—</td><td>987043775</td></tr>
-        <tr><td>UOCT</td><td>CENTRAL CÁMARAS</td><td>229224989</td></tr>
-        <tr><td>CÁMARAS RP</td><td>IP</td><td>229222337</td></tr>
-      </tbody>
-    </table>
-
-    <p class="small-note">☎️.</p>
-  `
-},
-    // 👈 coma importante para separar el bloque anterior
-correos_interes: {
-  title: 'CORREOS DE INTERÉS',
-  html: `
-    <style>
-      .t-correos { width:100%; border-collapse: collapse; font-size:14px; }
-      .t-correos th {
-        background:#1f6b3a; color:#fff; padding:8px 10px; text-align:left;
-        font-weight:700; font-size:15px;
-      }
-      .t-correos td { padding:8px 10px; border:1px solid #e6efe6; background:#fff; vertical-align:middle; }
-      .t-correos tr:nth-child(even) td { background:#fbfbfb; }
-      .t-correos caption { caption-side: top; font-weight:700; margin-bottom:8px; color:#174b2b; font-size:16px; }
-      .small-note { margin-top:10px; font-size:13px; color:#444; }
-      a.mail-link { color:#007639; text-decoration:none; font-weight:600; }
-      a.mail-link:hover { text-decoration:underline; }
-    </style>
-
-    <table class="t-correos" role="table" aria-label="Correos de Interés">
-      <caption>CORREOS DE INTERÉS</caption>
-      <thead>
-        <tr>
-          <th style="width:25%;">ENTIDAD</th>
-          <th style="width:35%;">CONTACTO / DEPENDENCIA</th>
-          <th style="width:40%;">CORREO / TELÉFONO</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>GENDARMERÍA – TOBILLERA</td><td>Jefe Dpto. de Monitoreo Telemático</td><td>Pablo Gaete Letelier<br>229163147<br><a href="mailto:pablo.gaete@gendarmeria.cl" class="mail-link">pablo.gaete@gendarmeria.cl</a><br><i>Términos del requerimiento: autorización judicial explícita del Tribunal de Garantía.</i></td></tr>
-        <tr><td>COMISARÍA VIRTUAL</td><td>—</td><td><a href="mailto:ordenesjudiciales.comvirtual@carabineros.cl" class="mail-link">ordenesjudiciales.comvirtual@carabineros.cl</a><br><i>Requiere instrucción particular de Fiscalía.</i></td></tr>
-        <tr><td>APP YAPO</td><td>—</td><td><a href="incidencias@yapo.cl" class="mail-link">incidencias@yapo.cl</a><br><i>Con IP a adevintachile-yapo.cl, a ese correo y tambien a natalia.weber@adevinta.com.</i></td></tr>
-        <tr><td>JEFE DE PEAJES RUTA DEL MAIPO</td><td>Jorge Correa Muñoz</td><td>56225993567 / 56228903103<br><a href="mailto:jcorrea@intervialchile.cl" class="mail-link">jcorrea@intervialchile.cl</a></td></tr>
-        <tr><td>BUSES RED</td><td>Para solicitud de registros filmicos de camaras de buses</td><td>-<br><a href="mailto:supervisorcofstp@stpsantiago.cl" class="mail-link">supervisorcofstp@stpsantiago.cl</a></td></tr>
-        <tr><td>METRO DE SANTIAGO</td><td>Solicitud de cámaras al interior de metro</td><td>pburgos@metro.cl<br><a href="mailto:jabarca@metro.cl" class="mail-link">jabarca@metro.cl</a></td></tr>
-        <tr><td>COMPAÑÍA CLARO</td><td>Solicitud datos telefónicos</td><td>-<br><a href="mailto:info.judicial@clarochile.cl" class="mail-link">info.judicial@clarochile.cl</a></td></tr>
-        <tr><td>COMPAÑÍA MOVISTAR</td><td>Solicitud datos telefónicos</td><td>-<br><a href="mailto:r.judicialeschile@telefonica.com" class="mail-link">r.judicialeschile@telefonica.com</a></td></tr>
-        <tr><td>COMPAÑÍA ENTEL</td><td>Solicitud datos telefónicos</td><td>-<br><a href="mailto:soperacional@entel.cl" class="mail-link">soperacional@entel.cl</a></td></tr>
-        <tr><td>COMPAÑÍA VIRGIN</td><td>Solicitud datos telefónicos</td><td>-<br><a href="mailto:procesointer@virginmobile.cl" class="mail-link">procesointer@virginmobile.cl</a></td></tr>
-        <tr><td>MUNICIPALIDAD PROVIDENCIA</td><td>Solicitud pórticos Providencia</td><td>-<br><a href="archivos1414@seguridadprovidencia.cl" class="mail-link">archivos1414@seguridadprovidencia.cl</a></td></tr>
-        <tr><td>SONDA</td><td>Tarjetas BIP y GPS transantiago</td><td>-<br><a href="edson.diaz@sonda.com" class="mail-link">edson.diaz@sonda.com</a></td></tr>
-        <tr><td>MERCADO LIBRE</td><td>Solicitud con Orden de Investigar</td><td>-<br><a href="tania.villegas@mercadolibre.cl" class="mail-link">tania.villegas@mercadolibre.cl</a></td></tr>
-        <tr><td>ENEL</td><td>Información de clientes con Orden de Investigar</td><td>-<br><a href="clientes@enel.com" class="mail-link">clientes@enel.com</a></td></tr>        
-      </tbody>
-    </table>
-
-    <p class="small-note">📧.</p>
-  `
-},
-
-correos_formatos: {
-  title: 'CORREOS CON FORMATOS',
-  html: `
-    <style>
-      .t-formatos2 {
-        width:100%; 
-        border-collapse: collapse; 
-        font-size:14px;
-      }
-      .t-formatos2 th {
-        background:#1f6b3a; 
-        color:#fff; 
-        padding:8px 10px;
-        text-align:left; 
-        font-weight:700; 
-        font-size:15px;
-      }
-      .t-formatos2 td {
-        padding:10px; 
-        border:1px solid #e6efe6; 
-        background:#fff;
-        vertical-align:middle;
-      }
-      .t-formatos2 tr:nth-child(even) td { 
-        background:#fbfbfb; 
-      }
-      .btn-format {
-        display:inline-block; 
-        padding:6px 12px; 
-        background:#007639;
-        color:#fff !important; 
-        border-radius:6px; 
-        text-decoration:none;
-        font-size:13px; 
-        font-weight:700;
-        margin-right:6px;
-      }
-      .btn-format:hover { 
-        background:#005f2b; 
-      }
-    </style>
-
-    <table class="t-formatos2" role="table">
-      <thead>
-        <tr>
-          <th style="width:20%;">Entidad</th>
-          <th style="width:35%;">Descripción</th>
-          <th style="width:25%;">Correo</th>
-          <th style="width:20%;">Formatos</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <tr>
-          <td>INTERPOL</td>
-          <td>Alertas Internacionales</td>
-          <td>
-            <a href="mailto:interpol@correo.cl">interpol@correo.cl</a>
-          </td>
-          <td>
-            <a class="btn-format" 
-               href="MODELO%20PARA%20ALERTA%20MORADA.docx" 
-               download>
-               Alerta Morada
-            </a>
-
-            <a class="btn-format" 
-               href="MODELO%20PARA%20ALERTA%20AZUL%20(1).docx" 
-               download>
-               Alerta Azul
-            </a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-
-    <p style="font-size:13px; color:#444; margin-top:10px;">
-      Los archivos se descargan directamente en formato Word (*.docx).
-    </p>
-  `
-},
-    plataformas_osint: {
-  title: "PLATAFORMAS OSINT",
-  html: `
-    <style>
-      .osint-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 15px;
-        margin-top: 15px;
-      }
-      .osint-card {
-        background: #fff;
-        padding: 12px;
-        border-radius: 8px;
-        box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-        text-align: center;
-        font-size: 14px;
-        transition: .2s;
-      }
-      .osint-card:hover {
-        transform: scale(1.03);
-        box-shadow: 0 6px 14px rgba(0,0,0,0.15);
-      }
-      .osint-card img {
-        width: 50px;
-        height: 50px;
-        object-fit: contain;
-        margin-bottom: 8px;
-      }
-      .osint-section-title {
-        margin-top: 20px;
-        margin-bottom: 5px;
-        font-weight: 700;
-        color: #0a3d2e;
-        border-left: 5px solid #007639;
-        padding-left: 8px;
-        font-size: 16px;
-      }
-    </style>
-
-    <!-- FACEBOOK -->
-    <div class="osint-section-title">Facebook</div>
-    <div class="osint-grid">
-      <a class="osint-card" href="https://www.sowsearch.info" target="_blank">
-        <img src="icon-facebook.png"><div>Sowsearch</div>
-      </a>
-      <a class="osint-card" href="https://www.plessas.net/facebookmatrix" target="_blank">
-        <img src="icon-facebook.png"><div>Facebook Matrix</div>
-      </a>
-      <a class="osint-card" href="https://www.whopostedwhat.com/" target="_blank">
-        <img src="icon-facebook.png"><div>Who Posted What</div>
-      </a>
-    </div>
-
-    <!-- IMAGEN / METADATOS -->
-    <div class="osint-section-title">Búsqueda de Imagen</div>
-    <div class="osint-grid">
-      <a class="osint-card" href="https://www.facesearchai.com/" target="_blank">
-        <img src="icon-face.png"><div>FaceSearch</div>
-      </a>
-      <a class="osint-card" href="https://flickr.com/" target="_blank">
-        <img src="icon-flickr.png"><div>Flickr</div>
-      </a>
-      <a class="osint-card" href="https://imgops.com/" target="_blank">
-        <img src="icon-imgops.png"><div>ImgOps</div>
-      </a>
-      <a class="osint-card" href="https://images.google.com/" target="_blank">
-        <img src="icon-google.png"><div>Google Img</div>
-      </a>
-      <a class="osint-card" href="https://www.bing.com/images" target="_blank">
-        <img src="icon-bing.png"><div>Bing Img</div>
-      </a>
-      <a class="osint-card" href="https://tineye.com/" target="_blank">
-        <img src="icon-tineye.png"><div>TinEye</div>
-      </a>
-    </div>
-
-    <!-- INSTAGRAM / TIKTOK -->
-    <div class="osint-section-title">Instagram / TikTok</div>
-    <div class="osint-grid">
-      <a class="osint-card" href="https://www.picuki.com" target="_blank">
-        <img src="icon-instagram.png"><div>Picuki</div>
-      </a>
-      <a class="osint-card" href="https://picuki.site" target="_blank">
-        <img src="icon-instagram.png"><div>Picuki Site</div>
-      </a>
-      <a class="osint-card" href="https://dumpor.io" target="_blank">
-        <img src="icon-instagram.png"><div>Dumpor</div>
-      </a>
-      <a class="osint-card" href="https://gramsnap.com/en" target="_blank">
-        <img src="icon-instagram.png"><div>Gramsnap</div>
-      </a>
-      <a class="osint-card" href="https://indown.io/insta-dp-viewer/es" target="_blank">
-        <img src="icon-instagram.png"><div>Insta DP</div>
-      </a>
-    </div>
-
-    <!-- OSINT GENERAL -->
-    <div class="osint-section-title">OSINT General</div>
-    <div class="osint-grid">
-      <a class="osint-card" href="https://www.osintcombine.com/tools" target="_blank">
-        <img src="icon-osintmini.png"><div>OSINT Combine</div>
-      </a>
-      <a class="osint-card" href="https://inteltechniques.com/tools/index.html" target="_blank">
-        <img src="icon-intel.png"><div>IntelTechniques</div>
-      </a>
-      <a class="osint-card" href="https://intelx.io/" target="_blank">
-        <img src="icon-intelx.png"><div>IntelX</div>
-      </a>
-      <a class="osint-card" href="https://www.similarweb.com/" target="_blank">
-        <img src="icon-world.png"><div>SimilarWeb</div>
-      </a>
-      <a class="osint-card" href="https://franzpc.com/apps/conversor-coordenadas-geograficas-utm.html" target="_blank">
-        <img src="icon-utm.png"><div>Conversor UTM</div>
-      </a>
-      <a class="osint-card" href="https://webmii.com/?language=es" target="_blank">
-        <img src="icon-webmii.png"><div>Webmii</div>
-      </a>
-    </div>
-  `
+  const modal = document.getElementById("osint-modal");
+  modal.style.display = "block";
+  modal.setAttribute("aria-hidden","false");
 }
-  };
 
-  /* Funciones modal */
-  function openModal(key){
-    const data = OSINT_CONTENT[key];
-    if(!data) return;
-    const modal = document.getElementById('osint-modal');
-    document.getElementById('osint-modal-title').innerText = data.title || '';
-    document.getElementById('osint-modal-content').innerHTML = data.html || '';
-    modal.style.display = 'block';
-    modal.setAttribute('aria-hidden','false');
-    // focus for accessibility
-    document.getElementById('osint-modal-close').focus();
-  }
-  function closeModal(){
-    const modal = document.getElementById('osint-modal');
-    modal.style.display = 'none';
-    modal.setAttribute('aria-hidden','true');
-  }
+function closeModal(){
+  const modal = document.getElementById("osint-modal");
+  modal.style.display = "none";
+  modal.setAttribute("aria-hidden","true");
+}
 
-  document.addEventListener('DOMContentLoaded', ()=> {
-    // close handlers
-    document.getElementById('osint-modal-close').addEventListener('click', closeModal);
-    document.getElementById('osint-modal-backdrop').addEventListener('click', (e)=>{
-      if(e.target.id === 'osint-modal-backdrop') closeModal();
-    });
-    document.addEventListener('keydown', (e)=> { if(e.key === 'Escape') closeModal(); });
-
-    // wire cards with data-action="modal"
-    document.querySelectorAll('.card[data-action="modal"]').forEach(card=>{
-      card.addEventListener('click', function(evt){
-        evt.preventDefault();
-        const key = card.getAttribute('data-key');
-        if(key) openModal(key);
-      });
+/* Eventos */
+document.addEventListener("DOMContentLoaded", ()=>{
+  document.querySelectorAll("[data-action='modal']").forEach(card=>{
+    card.addEventListener("click", e=>{
+      e.preventDefault();
+      openModal(card.dataset.key);
     });
   });
-  </script>
 
-  <!-- Service Worker registro (no tocar) -->
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('service-worker.js')
-        .then(()=>console.log('SW registrado'))
-        .catch(e=>console.warn('SW error',e));
-    }
-  </script>
-</body>
-</html>
+  document.getElementById("osint-modal-close").onclick = closeModal;
+  document.getElementById("osint-modal-backdrop").onclick = e=>{
+    if(e.target.id === "osint-modal-backdrop") closeModal();
+  };
+  document.addEventListener("keydown", e=>{
+    if(e.key === "Escape") closeModal();
+  });
+});
+</script>
+
+<!-- ====== SERVICE WORKER ====== -->
+<script>
+if("serviceWorker" in navigator){
+  navigator.serviceWorker.register("service-worker.js")
+    .then(()=>console.log("SW activo"))
+    .catch(e=>console.warn("SW error", e));
+}
+</script>
+
