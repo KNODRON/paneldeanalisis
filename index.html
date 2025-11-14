@@ -481,56 +481,81 @@ correos_formatos: {
   title: 'CORREOS CON FORMATOS',
   html: `
     <style>
-      .t-formatos { width:100%; border-collapse: collapse; font-size:14px; }
-      .t-formatos th {
-        background:#1f6b3a; color:#fff; padding:8px 10px; text-align:left;
-        font-weight:700; font-size:15px;
+      .t-formatos2 {
+        width:100%; 
+        border-collapse: collapse; 
+        font-size:14px;
       }
-      .t-formatos td {
-        padding:10px; border:1px solid #e6efe6; background:#fff; vertical-align:middle;
+      .t-formatos2 th {
+        background:#1f6b3a; 
+        color:#fff; 
+        padding:8px 10px;
+        text-align:left; 
+        font-weight:700; 
+        font-size:15px;
       }
-      .t-formatos tr:nth-child(even) td { background:#fbfbfb; }
-      .t-formatos caption {
-        caption-side: top; font-weight:700; margin-bottom:10px;
-        color:#174b2b; font-size:16px;
+      .t-formatos2 td {
+        padding:10px; 
+        border:1px solid #e6efe6; 
+        background:#fff;
+        vertical-align:middle;
       }
-      .btn-descargar {
-        display:inline-block; padding:6px 12px; background:#007639;
-        color:#fff; border-radius:6px; text-decoration:none;
-        font-size:13px; font-weight:700;
+      .t-formatos2 tr:nth-child(even) td { 
+        background:#fbfbfb; 
       }
-      .btn-descargar:hover {
-        background:#005f2b;
+      .btn-format {
+        display:inline-block; 
+        padding:6px 12px; 
+        background:#007639;
+        color:#fff !important; 
+        border-radius:6px; 
+        text-decoration:none;
+        font-size:13px; 
+        font-weight:700;
+        margin-right:6px;
+      }
+      .btn-format:hover { 
+        background:#005f2b; 
       }
     </style>
 
-    <table class="t-formatos" role="table">
-      <caption>FORMATOS DISPONIBLES</caption>
+    <table class="t-formatos2" role="table">
       <thead>
         <tr>
-          <th>FORMATO</th>
-          <th>DESCARGAR</th>
+          <th style="width:20%;">Entidad</th>
+          <th style="width:35%;">Descripción</th>
+          <th style="width:25%;">Correo</th>
+          <th style="width:20%;">Formatos</th>
         </tr>
       </thead>
+
       <tbody>
         <tr>
-          <td>Alerta Morada</td>
+          <td>INTERPOL</td>
+          <td>Alertas Internacionales</td>
           <td>
-            <a class="btn-descargar" href="MODELO PARA ALERTA MORADA.docx" download>
-              Descargar
-            </a>
+            <a href="mailto:interpol@correo.cl">interpol@correo.cl</a>
           </td>
-        </tr>
-        <tr>
-          <td>Alerta Azul</td>
           <td>
-            <a class="btn-descargar" href="MODELO PARA ALERTA AZUL (1).docx" download>
-              Descargar
+            <a class="btn-format" 
+               href="MODELO%20PARA%20ALERTA%20MORADA.docx" 
+               download>
+               Alerta Morada
+            </a>
+
+            <a class="btn-format" 
+               href="MODELO%20PARA%20ALERTA%20AZUL%20(1).docx" 
+               download>
+               Alerta Azul
             </a>
           </td>
         </tr>
       </tbody>
     </table>
+
+    <p style="font-size:13px; color:#444; margin-top:10px;">
+      Los archivos se descargan directamente en formato Word (*.docx).
+    </p>
   `
 }
   };
