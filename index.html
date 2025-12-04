@@ -117,85 +117,358 @@
 
 <div class="grid">
 
-    <!-- === Ya incluí tu botón aquí === -->
+    <!-- === BOTONES PRINCIPALES === -->
+
+    <a class="card" href="http://doe.carabineros.cl/" target="_blank">
+      <img src="icon-doe.png"><span>Documentación Electrónica</span>
+    </a>
+
+    <a class="card" href="http://sicpol.carabineros.cl/" target="_blank">
+      <img src="icon-sicpol.png"><span>SICPOL</span>
+    </a>
+
+    <a class="card" href="http://scic.carabineros.cl/scicd/login.php" target="_blank">
+      <img src="icon-scic.png"><span>SCIC</span>
+    </a>
+
+    <a class="card" href="http://monitoweb.srcei.cl/monito/121/92/135c6582.mon" target="_blank">
+      <img src="icon-monito.png"><span>MonitoWeb</span>
+    </a>
+
+    <a class="card" href="http://10.190.9.11:7777/login/LoginOracle.html" target="_blank">
+      <img src="icon-bud.png"><span>BUD</span>
+    </a>
+
+    <a class="card" href="https://web.whatsapp.com/" target="_blank">
+      <img src="icon-WhatsApp.png"><span>WhatsApp</span>
+    </a>
+
+    <a class="card" href="http://geminis.si2.cl:8080/#/" target="_blank">
+      <img src="gemini.png"><span>Gemini</span>
+    </a>
+
+    <a class="card" href="https://www.encargoautoseguro.gob.cl/index.php" target="_blank">
+      <img src="icon-suev.png"><span>SUEV</span>
+    </a>
+
+    <a class="card" href="http://departamentosebv.carabineros.cl/encargo/datatables/index_sebvp.php" target="_blank">
+      <img src="icon-encargosebv.png"><span>Encargo SEBV</span>
+    </a>
+
     <a class="card" href="#" data-action="modal" data-key="identificador_telefonico">
       <img src="icon-companias.png"><span>Identificador Telefónico</span>
     </a>
-    <!-- ... (RESTO DE TUS BOTONES 100% IGUALES) ... -->
-/* ===========================
-   IDENTIFICADOR TELEFÓNICO
-=========================== */
-identificador_telefonico: {
-  title: "IDENTIFICADOR TELEFÓNICO",
-  html: `
-    <style>
-      .tel-box {
-        background:#f3fdf6;
-        padding:15px;
-        border-radius:8px;
-        margin-bottom:12px;
-        border:1px solid #dfeee4;
-      }
-      .tel-input {
-        width:100%;
-        padding:10px;
-        font-size:16px;
-        border-radius:6px;
-        border:1px solid #ccc;
-        margin-bottom:12px;
-      }
-      .tel-btn {
-        width:100%;
-        background:#007639;
-        color:white;
-        padding:10px;
-        font-size:16px;
-        font-weight:bold;
-        border:none;
-        border-radius:6px;
-        cursor:pointer;
-      }
-      .tel-btn:hover { background:#005f2b; }
 
-      .result-box {
-        margin-top:15px;
-        padding:12px;
-        border-radius:8px;
-        background:#fff;
-        border:1px solid #e2e2e2;
-        text-align:center;
-      }
-      .tel-logo {
-        width:60px; height:60px; object-fit:contain;
-        margin-bottom:8px;
-      }
-      .prefijo-box {
-        margin-top:20px;
-        padding:10px;
-        background:#f4f4f4;
-        border-radius:8px;
-        font-size:14px;
-      }
-    </style>
+<!-- ====== CONTENIDOS DE LOS MODALES ====== -->
+<script>
+const OSINT_CONTENT = {
 
-    <div class="tel-box">
-      <input id="tel-input" class="tel-input" type="text" maxlength="9"
-             placeholder="Ingrese número sin 9 inicial (Ej: 76543210)">
-      <button class="tel-btn" onclick="procesarTelefono()">Identificar Compañía</button>
-    </div>
+  /* ===========================
+      TELÉFONOS AUTOPISTAS
+  ============================ */
+  telefonos_autopistas: {
+    title: "TELÉFONOS AUTOPISTAS",
+    html: `
+      <style>
+        .tbl { width:100%; border-collapse:collapse; font-size:14px; }
+        .tbl th {
+          background:#1f6b3a; color:#fff; padding:8px;
+          text-align:left; font-size:15px;
+        }
+        .tbl td { padding:8px; border:1px solid #e6efe6; }
+        .tbl tr:nth-child(even) td { background:#f9f9f9; }
+      </style>
 
-    <div id="resultado-telefono"></div>
+      <table class="tbl">
+        <thead>
+          <tr><th>N°</th><th>Autopista</th><th>Teléfono</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Autopista Central</td><td>224223933</td></tr>
+          <tr><td>2</td><td>Vespucio Sur</td><td>226943403</td></tr>
+          <tr><td>3</td><td>Vespucio Norte</td><td>225713004</td></tr>
+          <tr><td>4</td><td>Vespucio Oriente</td><td>225477777</td></tr>
+          <tr><td>5</td><td>Costanera Norte</td><td>224900854</td></tr>
+          <tr><td>6</td><td>Autopista del Maipo</td><td>228903194</td></tr>
+          <tr><td>7</td><td>Autopista del Sol</td><td>229155919</td></tr>
+          <tr><td>8</td><td>Asistencia Autop. del Sol</td><td>228325500</td></tr>
+          <tr><td>9</td><td>Autopista Aconcagua</td><td>224620950</td></tr>
+          <tr><td>10</td><td>Autopista Los Libertadores</td><td>227333101</td></tr>
+        </tbody>
+      </table>
+    `
+  },
 
-    <div class="prefijo-box">
-      <b>Prefijos especiales detectables:</b><br>
-      <ul>
-        <li>600 → Call Center empresas</li>
-        <li>700 → Servicios alternativos especiales</li>
-        <li>800 → Números gratuitos (800-XXX-XXX)</li>
-        <li>900 → Servicios Premium</li>
-      </ul>
-    </div>
-  `
-},
+  /* ===========================
+      TELÉFONOS DE INTERÉS
+  ============================ */
+  telefonos_interes: {
+    title: 'TELÉFONOS DE INTERÉS',
+    html: `
+      <style>
+        .t-interes { width:100%; border-collapse: collapse; font-size:14px; }
+        .t-interes th {
+          background:#1f6b3a; color:#fff; padding:8px 10px; text-align:left;
+          font-weight:700; font-size:15px;
+        }
+        .t-interes td { padding:8px 10px; border:1px solid #e6efe6; background:#fff; }
+        .t-interes tr:nth-child(even) td { background:#fbfbfb; }
+        .t-interes caption { font-weight:700; margin-bottom:8px; }
+      </style>
 
-  
+      <table class="t-interes">
+        <thead>
+          <tr>
+            <th>INSTITUCIÓN</th>
+            <th>DEPENDENCIA / EMAIL</th>
+            <th>TELÉFONO</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>SENAME</td><td>SAN JOAQUÍN</td><td>225898853</td></tr>
+          <tr><td>SENAME</td><td>SAN BERNARDO</td><td>225923279 / 225923341</td></tr>
+          <tr><td>SENAME</td><td>TIL TIL</td><td>223522400 / 223522418</td></tr>
+          <tr><td>GENDARMERÍA</td><td>—</td><td>227135284</td></tr>
+          <tr><td>CÁMARAS TRANSANTIAGO</td><td>CARABINERO SERVICIO</td><td>224213000 anexo 8530</td></tr>
+          <tr><td>METBUS</td><td><a href="mailto:cof@metbus.cl">cof@metbus.cl</a></td><td>228177998</td></tr>
+          <tr><td>STP</td><td>TRANSANTIAGO</td><td>224119593</td></tr>
+          <tr><td>SUBUS</td><td>TRANSANTIAGO</td><td>224131822</td></tr>
+          <tr><td>MALL PLAZA</td><td><a href="mailto:ext_jpacheco@mallplaza.com">ext_jpacheco@mallplaza.com</a></td><td>956151894</td></tr>
+        </tbody>
+      </table>
+    `
+  },
+
+  /* ===========================
+      CORREOS DE INTERÉS
+  ============================ */
+  correos_interes: {
+    title: 'CORREOS DE INTERÉS',
+    html: `
+      <style>
+        .t-correos { width:100%; border-collapse: collapse; font-size:14px; }
+        .t-correos th {
+          background:#1f6b3a; color:#fff; padding:8px 10px;
+          text-align:left; font-weight:700;
+        }
+        .t-correos td { padding:8px 10px; border:1px solid #e6efe6; }
+        .t-correos tr:nth-child(even) td { background:#fbfbfb; }
+      </style>
+
+      <table class="t-correos">
+        <thead>
+          <tr>
+            <th>ENTIDAD</th>
+            <th>DEPENDENCIA</th>
+            <th>CONTACTO</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>METRO</td>
+            <td>Solicitud cámaras</td>
+            <td>pburgos@metro.cl<br>jabarca@metro.cl</td>
+          </tr>
+          <tr>
+            <td>ENTEL</td>
+            <td>Solicitud judicial</td>
+            <td>soperacional@entel.cl</td>
+          </tr>
+          <tr>
+            <td>CLARO</td>
+            <td>Solicitud datos</td>
+            <td>info.judicial@clarochile.cl</td>
+          </tr>
+        </tbody>
+      </table>
+    `
+  },
+
+  /* ===========================
+      CORREOS CON FORMATOS
+  ============================ */
+  correos_formatos: {
+    title: 'CORREOS CON FORMATOS',
+    html: `
+      <p>Formatos disponibles para descargar:</p>
+
+      <a href="MODELO%20PARA%20ALERTA%20MORADA.docx" download>🟣 Alerta Morada</a><br>
+      <a href="MODELO%20PARA%20ALERTA%20AZUL%20(1).docx" download>🔵 Alerta Azul</a><br>
+      <a href="MODELO%20PARA%20ALERTA%20AMARILLA.docx" download>🟡 Alerta Amarilla</a>
+    `
+  },
+
+  /* ===========================
+      IDENTIFICADOR TELEFÓNICO
+  ============================ */
+  identificador_telefonico: {
+    title: "IDENTIFICADOR TELEFÓNICO",
+    html: `
+      <style>
+        .tel-box { background:#f3fdf6; padding:15px; border-radius:8px; border:1px solid #dfeee4; }
+        .tel-input { width:100%; padding:10px; font-size:16px; border:1px solid #ccc; border-radius:6px; margin-bottom:12px; }
+        .tel-btn { width:100%; background:#007639; color:white; padding:10px; font-size:16px; border-radius:6px; border:none; font-weight:bold; cursor:pointer; }
+        .tel-btn:hover { background:#005f2b; }
+        .result-box { margin-top:15px; padding:15px; border-radius:8px; background:white; border:1px solid #ddd; text-align:center; }
+        .tel-logo { width:60px; height:60px; object-fit:contain; margin-bottom:8px; }
+      </style>
+
+      <div class="tel-box">
+        <input id="tel-input" class="tel-input" type="text" maxlength="9" placeholder="Ej: 76543210 (8 ó 9 dígitos)">
+        <button class="tel-btn" onclick="procesarTelefono()">Identificar Compañía</button>
+      </div>
+
+      <div id="resultado-telefono"></div>
+
+      <div style="margin-top:20px;">
+        <b>Prefijos especiales detectables:</b>
+        <ul>
+          <li>600 → Call Center empresas</li>
+          <li>700 → Servicios especiales</li>
+          <li>800 → Números gratuitos</li>
+          <li>900 → Servicios Premium</li>
+        </ul>
+      </div>
+    `
+  }
+
+};
+<!-- ====== FUNCIONES DEL IDENTIFICADOR TELEFÓNICO ====== -->
+<script>
+
+/* Procesar input */
+function procesarTelefono() {
+  const input = document.getElementById("tel-input");
+  if (!input) return;
+
+  let numero = input.value.replace(/\D/g, "");
+
+  if (numero.length < 8) {
+    document.getElementById("resultado-telefono").innerHTML =
+      `<p style="color:red;">⚠ Debe ingresar al menos 8 dígitos.</p>`;
+    return;
+  }
+
+  const especial = identificarPrefijoEspecial(numero);
+  const compania = identificarCompania(numero);
+
+  let html = `<div class="result-box">`;
+
+  if (especial) {
+    html += `<p><b>Número especial detectado:</b><br>${especial}</p>`;
+  } else {
+    html += `
+      <img class="tel-logo" src="${logoTelco(compania)}">
+      <p><b>Compañía Detectada:</b><br>${compania}</p>
+    `;
+  }
+
+  html += `</div>`;
+
+  document.getElementById("resultado-telefono").innerHTML = html;
+}
+
+/* Mapear logos */
+function logoTelco(nombre){
+  const logos = {
+    "Entel": "logo-entel.png",
+    "Movistar": "logo-movistar.png",
+    "WOM": "logo-wom.png",
+    "Claro": "logo-claro.png",
+    "VTR": "logo-vtr.png",
+    "Mundo": "logo-mundo.png",
+    "Virgin": "logo-virgin.png",
+    "Desconocida": "logo-desconocido.png"
+  };
+  return logos[nombre] || logos["Desconocida"];
+}
+
+/* Móvil — identificación por 4° dígito */
+function identificarCompania(num){
+  const cuarto = num[1]; // porque el primer dígito es 9 o 2
+
+  const mapa = {
+    "3": "Entel",
+    "4": "Movistar",
+    "5": "Movistar",
+    "6": "WOM",
+    "7": "WOM",
+    "8": "VTR",
+    "9": "Claro"
+  };
+
+  return mapa[cuarto] || "Desconocida";
+}
+
+/* Números especiales */
+function identificarPrefijoEspecial(num){
+  if (num.startsWith("600")) return "600 — Call Center empresas";
+  if (num.startsWith("700")) return "700 — Servicios alternativos";
+  if (num.startsWith("800")) return "800 — Número gratuito";
+  if (num.startsWith("900")) return "900 — Servicio Premium";
+  return null;
+}
+
+</script>
+
+
+
+<!-- ====== FUNCIONES GENERALES DE MODAL ====== -->
+<script>
+
+function openModal(key){
+  const data = OSINT_CONTENT[key];
+  if(!data) return;
+
+  document.getElementById("osint-modal-title").innerText = data.title;
+  document.getElementById("osint-modal-content").innerHTML = data.html;
+
+  const modal = document.getElementById("osint-modal");
+  modal.style.display = "block";
+  modal.setAttribute("aria-hidden","false");
+}
+
+function closeModal(){
+  const modal = document.getElementById("osint-modal");
+  modal.style.display = "none";
+  modal.setAttribute("aria-hidden","true");
+}
+
+/* Eventos */
+document.addEventListener("DOMContentLoaded", () => {
+
+  // Eventos para abrir modal
+  document.querySelectorAll("[data-action='modal']").forEach(card=>{
+    card.addEventListener("click", e=>{
+      e.preventDefault();
+      openModal(card.dataset.key);
+    });
+  });
+
+  // Cerrar modal
+  document.getElementById("osint-modal-close").onclick = closeModal;
+
+  document.getElementById("osint-modal-backdrop").onclick = e=>{
+    if(e.target.id === "osint-modal-backdrop") closeModal();
+  };
+
+  document.addEventListener("keydown", e=>{
+    if(e.key === "Escape") closeModal();
+  });
+
+});
+</script>
+
+
+
+<!-- ====== SERVICE WORKER (PWA) ====== -->
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js")
+    .then(() => console.log("SW activo"))
+    .catch(err => console.warn("Error SW:", err));
+}
+</script>
+
+</body>
+</html>
