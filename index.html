@@ -14,25 +14,34 @@
       --page-bg: #f4f6f9;
     }
 
-    html,body{
-      height:100%;
-      margin:0;
-      padding:0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--page-bg);
-    }
+    html{
+  height:100%;
+  margin:0;
+  padding:0;
+  background: var(--page-bg);
+}
 
-    /* Marca de agua */
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background: url("logo-os9.jpeg") no-repeat center center;
-      background-size: 40%;
-      opacity: 0.20;
-      z-index: -1;
-      pointer-events: none;
-    }
+body{
+  min-height:100%;
+  margin:0;
+  padding:0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: transparent;          /* IMPORTANTE */
+  position: relative;               /* IMPORTANTE */
+}
+
+/* Marca de agua fija detrás de todo */
+body::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  background: url("logo-os9.jpeg") no-repeat;
+  background-size: 40%;
+  background-position: center 180px; /* SUBE el logo (ajustable) */
+  opacity: 0.20;
+  z-index: 0;                       /* NO -1 */
+  pointer-events: none;
+}
 
     @media (max-width: 1024px) { body::before { background-size: 55%; } }
     @media (max-width: 768px) { body::before { background-size: 70%; } }
