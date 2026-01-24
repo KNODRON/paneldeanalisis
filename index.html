@@ -633,34 +633,44 @@ google_osint: {
 
     <div class="g-dork">
       <label>🔍 Nombre completo</label>
-      <input id="g_nombre" placeholder="Ej: Juan Pérez Soto">
-      <button onclick="buscarGoogle('\"' + document.getElementById('g_nombre').value + '\"')">
+      <input id="osint-nombre" type="text" placeholder="Ej: Juan Pérez Soto">
+      <button onclick="buscarGoogle(document.getElementById('osint-nombre').value)">
         Buscar
       </button>
+
     </div>
 
     <div class="g-dork">
       <label>🔍 RUT</label>
-      <input id="g_rut" placeholder="Ej: 12.345.678-9">
-      <button onclick="buscarGoogle(document.getElementById('g_rut').value)">
+      <input id="osint-rut" type="text" placeholder="Ej: 12.345.678-9">
+      <button onclick="buscarGoogle('\"' + document.getElementById('osint-rut').value + '\"')">
         Buscar
       </button>
+
     </div>
 
     <div class="g-dork">
       <label>🔍 Redes Sociales</label>
-      <input id="g_rrss" placeholder="Nombre o usuario">
-      <button onclick="buscarGoogle('site:facebook.com OR site:instagram.com \"' + document.getElementById('g_rrss').value + '\"')">
+      <input id="osint-redes" type="text" placeholder="Nombre o usuario">
+      <button onclick="buscarGoogle(
+        'site:facebook.com OR site:instagram.com OR site:twitter.com \"' +
+        document.getElementById('osint-redes').value + '\"'
+      )">
         Buscar
       </button>
+
     </div>
 
     <div class="g-dork">
       <label>🔍 Documentos (PDF / DOC)</label>
-      <input id="g_docs" placeholder="Nombre o RUT">
-      <button onclick="buscarGoogle('filetype:pdf OR filetype:doc \"' + document.getElementById('g_docs').value + '\"')">
+      <input id="osint-docs" type="text" placeholder="Nombre o palabra clave">
+      <button onclick="buscarGoogle(
+        'filetype:pdf OR filetype:doc OR filetype:docx \"' +
+        document.getElementById('osint-docs').value + '\"'
+      )">
         Buscar
       </button>
+
     </div>
   `
 },
@@ -887,6 +897,11 @@ function closeModal(){
   const modal = document.getElementById("osint-modal");
   modal.style.display = "none";
   modal.setAttribute("aria-hidden","true");
+}
+  
+function buscarGoogle(dork){
+  const url = "https://www.google.com/search?q=" + encodeURIComponent(dork);
+  window.open(url, "_blank");
 }
 
 /* Eventos */
