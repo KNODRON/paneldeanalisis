@@ -652,10 +652,7 @@ google_osint: {
     <div class="g-dork">
       <label>🔍 Redes Sociales</label>
       <input id="osint-redes" type="text" placeholder="Nombre o usuario">
-      <button onclick="buscarGoogle(
-        'site:facebook.com OR site:instagram.com OR site:twitter.com \"' +
-        document.getElementById('osint-redes').value + '\"'
-      )">
+      <button onclick="buscarGoogle('site:facebook.com OR site:instagram.com OR site:twitter.com \"' + document.getElementById('osint-redes').value + '\"')">
         Buscar
       </button>
 
@@ -664,10 +661,7 @@ google_osint: {
     <div class="g-dork">
       <label>🔍 Documentos (PDF / DOC)</label>
       <input id="osint-docs" type="text" placeholder="Nombre o palabra clave">
-      <button onclick="buscarGoogle(
-        'filetype:pdf OR filetype:doc OR filetype:docx \"' +
-        document.getElementById('osint-docs').value + '\"'
-      )">
+      <button onclick="buscarGoogle('filetype:pdf OR filetype:doc OR filetype:docx \"' + document.getElementById('osint-docs').value + '\"')">
         Buscar
       </button>
 
