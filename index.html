@@ -273,6 +273,10 @@ body::before{
       <img src="icon-porticos.png"><span>Pórticos</span>
     </a>
   
+    <a class="card" href="#" data-action="modal" data-key="google_osint">
+      <img src="icon-google.png"><span>Google OSINT</span>
+    </a>
+  
 </div> <!-- cierre GRID principal -->
 
 
@@ -587,6 +591,77 @@ correos_interes: {
     </table>
 
     <p class="small-note">📧.</p>
+  `
+},
+
+google_osint: {
+  title: "GOOGLE OSINT – BÚSQUEDAS GUIADAS",
+  html: `
+    <style>
+      .g-dork {
+        margin-bottom: 14px;
+        padding: 12px;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        background: #f9f9f9;
+      }
+      .g-dork label {
+        font-weight: 700;
+        display: block;
+        margin-bottom: 6px;
+        color: #174b2b;
+      }
+      .g-dork input {
+        width: 100%;
+        padding: 8px;
+        font-size: 14px;
+        margin-bottom: 6px;
+      }
+      .g-dork button {
+        background: #007639;
+        color: #fff;
+        border: none;
+        padding: 8px 12px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: 600;
+      }
+      .g-dork button:hover {
+        background: #005f2b;
+      }
+    </style>
+
+    <div class="g-dork">
+      <label>🔍 Nombre completo</label>
+      <input id="g_nombre" placeholder="Ej: Juan Pérez Soto">
+      <button onclick="buscarGoogle('\"' + document.getElementById('g_nombre').value + '\"')">
+        Buscar
+      </button>
+    </div>
+
+    <div class="g-dork">
+      <label>🔍 RUT</label>
+      <input id="g_rut" placeholder="Ej: 12.345.678-9">
+      <button onclick="buscarGoogle(document.getElementById('g_rut').value)">
+        Buscar
+      </button>
+    </div>
+
+    <div class="g-dork">
+      <label>🔍 Redes Sociales</label>
+      <input id="g_rrss" placeholder="Nombre o usuario">
+      <button onclick="buscarGoogle('site:facebook.com OR site:instagram.com \"' + document.getElementById('g_rrss').value + '\"')">
+        Buscar
+      </button>
+    </div>
+
+    <div class="g-dork">
+      <label>🔍 Documentos (PDF / DOC)</label>
+      <input id="g_docs" placeholder="Nombre o RUT">
+      <button onclick="buscarGoogle('filetype:pdf OR filetype:doc \"' + document.getElementById('g_docs').value + '\"')">
+        Buscar
+      </button>
+    </div>
   `
 },
 
