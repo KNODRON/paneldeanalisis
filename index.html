@@ -594,81 +594,6 @@ correos_interes: {
   `
 },
 
-google_osint: {
-  title: "GOOGLE OSINT – BÚSQUEDAS GUIADAS",
-  html: `
-    <style>
-      .g-dork {
-        margin-bottom: 14px;
-        padding: 12px;
-        border: 1px solid #e0e0e0;
-        border-radius: 8px;
-        background: #f9f9f9;
-      }
-      .g-dork label {
-        font-weight: 700;
-        display: block;
-        margin-bottom: 6px;
-        color: #174b2b;
-      }
-      .g-dork input {
-        width: 100%;
-        padding: 8px;
-        font-size: 14px;
-        margin-bottom: 6px;
-      }
-      .g-dork button {
-        background: #007639;
-        color: #fff;
-        border: none;
-        padding: 8px 12px;
-        border-radius: 6px;
-        cursor: pointer;
-        font-weight: 600;
-      }
-      .g-dork button:hover {
-        background: #005f2b;
-      }
-    </style>
-
-    <div class="g-dork">
-      <label>🔍 Nombre completo</label>
-      <input id="osint-nombre" type="text" placeholder="Ej: Juan Pérez Soto">
-      <button onclick="buscarGoogle(document.getElementById('osint-nombre').value)">
-        Buscar
-      </button>
-
-    </div>
-
-    <div class="g-dork">
-      <label>🔍 RUT</label>
-      <input id="osint-rut" type="text" placeholder="Ej: 12.345.678-9">
-      <button onclick="buscarGoogle('\"' + document.getElementById('osint-rut').value + '\"')">
-        Buscar
-      </button>
-
-    </div>
-
-    <div class="g-dork">
-      <label>🔍 Redes Sociales</label>
-      <input id="osint-redes" type="text" placeholder="Nombre o usuario">
-      <button onclick="buscarGoogle('site:facebook.com OR site:instagram.com OR site:twitter.com \"' + document.getElementById('osint-redes').value + '\"')">
-        Buscar
-      </button>
-
-    </div>
-
-    <div class="g-dork">
-      <label>🔍 Documentos (PDF / DOC)</label>
-      <input id="osint-docs" type="text" placeholder="Nombre o palabra clave">
-      <button onclick="buscarGoogle('filetype:pdf OR filetype:doc OR filetype:docx \"' + document.getElementById('osint-docs').value + '\"')">
-        Buscar
-      </button>
-
-    </div>
-  `
-},
-
 correos_formatos: {
   title: 'CORREOS CON FORMATOS',
   html: `
@@ -892,11 +817,6 @@ function closeModal(){
   modal.style.display = "none";
   modal.setAttribute("aria-hidden","true");
 }
-  
-function buscarGoogle(dork){
-  const url = "https://www.google.com/search?q=" + encodeURIComponent(dork);
-  window.open(url, "_blank");
-}
 
 /* Eventos */
 document.addEventListener("DOMContentLoaded", ()=>{
@@ -925,5 +845,3 @@ if("serviceWorker" in navigator){
     .catch(e=>console.warn("SW error", e));
 }
 </script>
-
-
