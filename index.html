@@ -527,6 +527,7 @@ identificador_telefonico: {
         <tr><td>CÁMARAS RP</td><td>IP</td><td>229222337</td></tr>
         <tr><td>PDI</td><td>CIPOL Santiago Urgencias</td><td>227080637 227080638 227080643 227080632</td></tr>
         <tr><td>PDI</td><td>BICRIM Cerrillos (Francia 4040, Cerrillos)</td><td>227083033</td></tr>
+        <tr><td>SML</td><td>Consultas generales Servicio Médico Legal</td><td>227823509</td></tr>
       </tbody>
     </table>
 
@@ -593,7 +594,21 @@ correos_interes: {
   </td>
 </tr>
         <tr><td>BANCO DE CHILE</td><td>Correo para requerimiento secreto bancario</td><td><br><a href="mailto:oficios@bancochile.cl" class="mail-link">oficios@bancochile.cl</a></td></tr>
-      </tbody>
+        <tr><td>BANCO SANTANDER</td><td>Correo para requerimiento secreto bancario</td><td>lavado de activos<br><a href="mailto:oficios_regulatorios@santander.cl" class="mail-link">oficios_regulatorios@santander.cl</a></td></tr>
+        <tr><td>BANCO SANTANDER</td><td>Correo para requerimiento secreto bancario</td><td>general<br><a href="mailto:oficios@santander.cl" class="mail-link">oficios@santander.cl</a></td></tr>
+        <tr><td>BANCO BCI</td><td>Correo para requerimiento secreto bancario</td><td><br><a href="mailto:oficiosministeriopublico@bci.cl" class="mail-link">oficiosministeriopublico@bci.cl</a></td></tr>
+        <tr><td>BANCO SCOTIABANK</td><td>Correo para requerimiento secreto bancario</td><td><br><a href="mailto:oficiosministeriopublico@scotiabank.cl" class="mail-link">oficiosministeriopublico@scotiabank.cl</a></td></tr>
+        <tr><td>BANCO ITAÚ</td><td>Correo para requerimiento secreto bancario</td><td><br><a href="mailto:oficios.embargos@itau.cl" class="mail-link">oficios.embargos@itau.cl</a></td></tr>
+        <tr><td>BANCO FALABELLA</td><td>Correo para requerimiento secreto bancario</td><td><br><a href="mailto:oficios@bancofalabella.cl" class="mail-link">oficios@bancofalabella.cl</a></td></tr>
+        <tr><td>BANCO BICE</td><td>Correo para requerimiento secreto bancario</td><td><br><a href="mailto:oficios@bice.cl" class="mail-link">oficios@bice.cl</a></td></tr>
+        <tr><td>BANCO INTERNACIONAL</td><td>Correo para requerimiento secreto bancario</td><td><br><a href="mailto:oficios@internacional.cl" class="mail-link">oficios@internacional.cl</a></td></tr>
+        <tr><td>BANCO SECURITY</td><td>Correo para requerimiento secreto bancario</td><td><br><a href="mailto:fiscalia@security.cl" class="mail-link">fiscalia@security.cl</a></td></tr>
+        <tr><td>BANCO CONSORCIO</td><td>Correo para requerimiento secreto bancario</td><td><br><a href="mailto:oficios@bancoconsorcio.cl" class="mail-link">oficios@bancoconsorcio.cl</a></td></tr>
+        <tr><td>BANCO BTG PACTUAL</td><td>Correo para requerimiento secreto bancario</td><td><br><a href="mailto:departamento.legal@btgpactual.com" class="mail-link">departamento.legal@btgpactual.com</a></td></tr>
+        <tr><td>BANCO RIPLEYL</td><td>Correo para requerimiento secreto bancario</td><td><br><a href="mailto:oficios_BR@bancoripley.com" class="mail-link">oficios_BR@bancoripley.com</a></td></tr>
+        <tr><td>BANCO ESTADO</td><td>Correo para requerimiento secreto bancario</td><td><br><a href="mailto:oficiosministeriopublico@bancoestado.cl" class="mail-link">oficiosministeriopublico@bancoestado.cl</a></td></tr>
+        <tr><td>BANCO HSBC</td><td>Correo para requerimiento secreto bancario</td><td><br><a href="mailto:oficios1@cl.hsbc.com" class="mail-link">oficios1@cl.hsbc.com</a></td></tr>
+        </tbody>
     </table>
 
     <p class="small-note">📧.</p>
@@ -700,31 +715,40 @@ correos_formatos: {
           <td>
             <a href="interpol@carabineros.cl">interpol@carabineros.cl</a>
           </td>
-          <td>
-            <td class="format-column">
+          <td class="format-column">
+            <a class="btn-format btn-morada"
+               href="MODELO%20PARA%20ALERTA%20MORADA.docx" download>
+               🟣 Alerta Morada
+            </a>
 
-    <a class="btn-format btn-morada"
-       href="MODELO%20PARA%20ALERTA%20MORADA.docx"
-       download>
-       🟣 Alerta Morada
-    </a>
+            <a class="btn-format btn-azul"
+               href="MODELO%20PARA%20ALERTA%20AZUL%20(1).docx" download>
+               🔵 Alerta Azul
+            </a>
 
-    <a class="btn-format btn-azul"
-       href="MODELO%20PARA%20ALERTA%20AZUL%20(1).docx"
-       download>
-       🔵 Alerta Azul
-    </a>
-
-    <a class="btn-format btn-amarilla"
-       href="MODELO%20PARA%20ALERTA%20AMARILLA.docx"
-       download>
-       🟡 Alerta Amarilla
-    </a>
-
-</td>
-
+            <a class="btn-format btn-amarilla"
+               href="MODELO%20PARA%20ALERTA%20AMARILLA.docx" download>
+               🟡 Alerta Amarilla
+            </a>
+          </td>
         </tr>
-      </tbody>
+
+  <!-- ✅ NUEVA FILA: BANCO + PDF -->
+        <tr>
+          <td>BANCO XXXX</td>
+          <td>MODELO SECRETO BANCARIO</td>
+          <td>
+            <span style="color:#666;">(correo del banco si aplica)</span>
+          </td>
+
+          <td class="format-column">
+            <a class="btn-format btn-pdf"
+               href="MODELO_SECRETO_BANCARIO_BANCO_XXXX.pdf" download>
+         📄 Modelo Secreto Bancario (PDF)
+            </a>
+           </td>
+          </tr>
+        </tbody>
     </table>
 
     <p style="font-size:13px; color:#444; margin-top:10px;">
