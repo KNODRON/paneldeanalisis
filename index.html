@@ -325,7 +325,7 @@ body::before{
   </a>
   
   <a class="card" href="https://osintec.blogspot.com/" target="_blank">
-    <img src="icon-ecuador.png"><span>Info Pública Ecuador</span>
+    <img src="icon-ecuador.png"><span>Info Pública ECUADOR</span>
   </a>
   
 </div> <!-- cierre GRID EXTRANJEROS -->
@@ -356,57 +356,7 @@ body::before{
 <!-- ====== CONTENIDOS DE LOS MODALES ====== -->
 <script>
 const OSINT_CONTENT = {
-identificador_telefonico: {
-  title: "IDENTIFICADOR TELEFÓNICO",
-  html: `
-    <style>
-      .tel-box {
-        background:#f3fdf6; padding:15px; border-radius:8px;
-        border:1px solid #dfeee4;
-      }
-      .tel-input {
-        width:100%; padding:10px; font-size:16px;
-        border:1px solid #ccc; border-radius:6px;
-        margin-bottom:12px;
-      }
-      .tel-btn {
-        width:100%; background:#007639; color:white;
-        padding:10px; font-size:16px; border-radius:6px;
-        border:none; font-weight:bold; cursor:pointer;
-      }
-      .tel-btn:hover { background:#005f2b; }
-      .result-box {
-        margin-top:15px; padding:15px; border-radius:8px;
-        background:white; border:1px solid #ddd;
-        text-align:center;
-      }
-      .tel-logo {
-        width:60px; height:60px; object-fit:contain; margin-bottom:8px;
-      }
-    </style>
-
-    <div class="tel-box">
-      <input id="tel-input" class="tel-input"
-        type="text" maxlength="9"
-        placeholder="Ej: 912345678">
-      <button class="tel-btn" onclick="procesarTelefono()">
-        Identificar Compañía (no usar, esta en proceso)
-      </button>
-    </div>
-
-    <div id="resultado-telefono"></div>
-
-    <div style="margin-top:20px;">
-      <b>Prefijos especiales detectables:</b>
-      <ul>
-        <li>600 → Call Center empresas</li>
-        <li>700 → Servicios alternativos</li>
-        <li>800 → Números gratuitos</li>
-        <li>900 → Servicios Premium</li>
-      </ul>
-    </div>
-  `
-},
+  
   /* ===========================
       TELÉFONOS AUTOPISTAS
   ============================ */
@@ -653,35 +603,35 @@ correos_interes: {
         </tr>
       </thead>
       <tbody>
-        <tr><td>TrueCaller</td><td><a href="mailto:https://www.truecaller.com/">https://www.truecaller.com/</a></td><td>Aplicación y Sitio para búsqueda de números telefónicos</td></tr>
-        <tr><td>Similar Web</td><td><a href="mailto:https://www.similarweb.com/top-websites/">https://www.similarweb.com/top-websites/</a></td><td>Sitios mas populares en diferente países</td></tr>
-        <tr><td>IMEI teléfonos</td><td><a href="mailto:https://IMEI.info">https://IMEI.info</a></td><td>Búsqueda de IMEI</td></tr>
-        <tr><td>Sync.Me</td><td><a href="mailto:https://sync.me/">https://sync.me/</a></td><td>Aplicación y Sitio para búsqueda de números telefónicos</td></tr>
-        <tr><td>Lookup-ID</td><td><a href="mailto:https://lookup-id.com/">https://lookup-id.com/</a></td><td>Búsqueda de UID con nombre de usuario para Facebook</td></tr>
-        <tr><td>Findmyfbid</td><td><a href="mailto:https://www.findmyfbid.me/">https://www.findmyfbid.me/</a></td><td>Herramienta de perfíl Facebook</td></tr>
-        <tr><td>Facebook Matrix</td><td><a href="mailto:https://plessas.net/facebookmatrix">https://plessas.net/facebookmatrix</a></td><td>Herramienta de perfíl Facebook</td></tr>
-        <tr><td>Sowsearch</td><td><a href="mailto:https://www.sowsearch.info">https://www.sowsearch.info</a></td><td>Herramienta de perfíl Facebook</td></tr>
-        <tr><td>WhoPostedWhat</td><td><a href="mailto:https://whopostedwhat.com/">https://whopostedwhat.com/</a></td><td>Herramienta de perfíl Facebook</td></tr>
-        <tr><td>Pickuki</td><td><a href="mailto:https://www.picuki.com">https://www.picuki.com</a></td><td>Herramienta para ver y bajar información de Tiktok</td></tr>
-        <tr><td>Pickuki.site</td><td><a href="mailto:https://picuki.site">https://picuki.site</a></td><td>Herramienta para ver y bajar informacion de Instagram</td></tr>
-        <tr><td>Dumpor</td><td><a href="mailto:https://dumpor.io">https://dumpor.io</a></td><td>Herramienta para ver y bajar informacion de Instagram</td></tr>
-        <tr><td>Gramsnap</td><td><a href="mailto:https://gramsnap.com/en/">https://gramsnap.com/en/</a></td><td>Herramienta para ver y bajar informacion de Instagram</td></tr>        
-        <tr><td>Indown</td><td><a href="mailto:https://indown.io/insta-dp-viewer/es">https://indown.io/insta-dp-viewer/es</a></td><td>Herramienta para ver y bajar informacion de Instagram</td></tr>        
-        <tr><td>Code of a Ninja</td><td><a href="mailto:https://www.codeofaninja.com/tools/find-instagram-user-id/">https://www.codeofaninja.com/tools/find-instagram-user-id/</a></td><td>Búsqueda de UID con nombre de usuario para Instagram</td></tr>        
-        <tr><td>Code of a Ninja</td><td><a href="mailto:https://www.codeofaninja.com/tools/">https://www.codeofaninja.com/tools/</a></td><td>Herramientas para UID de RR.SS.</td></tr>
-        <tr><td>ImgOps</td><td><a href="mailto:https://www.imgops.com/">https://www.imgops.com/</a></td><td>Imagen en línea de meta-tool</td></tr>
-        <tr><td>TinEye</td><td><a href="mailto:https://www.tineye.com/">https://www.tineye.com/</a></td><td>Motor de búsqueda de imagen inversa</td></tr>
-        <tr><td>Google Images</td><td><a href="mailto:www.images.google.com">www.images.google.com</a></td><td>Busca imágenes en el repositorio de Google</td></tr>
-        <tr><td>Bing Images</td><td><a href="mailto:https://www.bing.com/images">https://www.bing.com/images</a></td><td>Busca imágenes en el repositorio de Bing</td></tr>
-        <tr><td>Wayback Machine</td><td><a href="mailto:https://archive.org/web/">https://archive.org/web/</a></td><td>Búsqueda de sitios con linea de tiempo</td></tr>
-        <tr><td>Bureau of Prison</td><td><a href="mailto:https://www.bop.gov/inmateloc/">https://www.bop.gov/inmateloc/</a></td><td>Busqueda de presos en el sistema Federal de los EE.UU</td></tr>
-        <tr><td>OSINT Combine</td><td><a href="mailto:https://www.osintcombine.com/tools">https://www.osintcombine.com/tools</a></td><td>Variedad de herramientas de perfil</td></tr>
-        <tr><td>Intel Techniques</td><td><a href="mailto:https://inteltechniques.com/tools/index.html">https://inteltechniques.com/tools/index.html</a></td><td>Variedad de herramientas de perfil</td></tr>
-        <tr><td>IntelX</td><td><a href="mailto:https://intelx.io/">https://intelx.io/</a></td><td>Variedad de herramientas de perfil</td></tr>        
+        <tr><td>TrueCaller</td><td><a href="https://www.truecaller.com/" target="_blank" rel="noopener">https://www.truecaller.com/</a></td><td>Aplicación y Sitio para búsqueda de números telefónicos</td></tr>
+        <tr><td>Similar Web</td><td><a href="https://www.similarweb.com/top-websites/" target="_blank" rel="noopener">https://www.similarweb.com/top-websites/</a></td><td>Sitios mas populares en diferente países</td></tr>
+        <tr><td>IMEI teléfonos</td><td><a href="https://IMEI.info" target="_blank" rel="noopener">https://IMEI.info</a></td><td>Búsqueda de IMEI</td></tr>
+        <tr><td>Sync.Me</td><td><a href="https://sync.me/" target="_blank" rel="noopener">https://sync.me/</a></td><td>Aplicación y Sitio para búsqueda de números telefónicos</td></tr>
+        <tr><td>Lookup-ID</td><td><a href="https://lookup-id.com/" target="_blank" rel="noopener">https://lookup-id.com/</a></td><td>Búsqueda de UID con nombre de usuario para Facebook</td></tr>
+        <tr><td>Findmyfbid</td><td><a href="https://www.findmyfbid.me/" target="_blank" rel="noopener">https://www.findmyfbid.me/</a></td><td>Herramienta de perfíl Facebook</td></tr>
+        <tr><td>Facebook Matrix</td><td><a href="https://plessas.net/facebookmatrix" target="_blank" rel="noopener">https://plessas.net/facebookmatrix</a></td><td>Herramienta de perfíl Facebook</td></tr>
+        <tr><td>Sowsearch</td><td><a href="https://www.sowsearch.info" target="_blank" rel="noopener">https://www.sowsearch.info</a></td><td>Herramienta de perfíl Facebook</td></tr>
+        <tr><td>WhoPostedWhat</td><td><a href="https://whopostedwhat.com/" target="_blank" rel="noopener">https://whopostedwhat.com/</a></td><td>Herramienta de perfíl Facebook</td></tr>
+        <tr><td>Pickuki</td><td><a href="https://www.picuki.com" target="_blank" rel="noopener">https://www.picuki.com</a></td><td>Herramienta para ver y bajar información de Tiktok</td></tr>
+        <tr><td>Pickuki.site</td><td><a href="https://picuki.site" target="_blank" rel="noopener">https://picuki.site</a></td><td>Herramienta para ver y bajar informacion de Instagram</td></tr>
+        <tr><td>Dumpor</td><td><a href="https://dumpor.io" target="_blank" rel="noopener">https://dumpor.io</a></td><td>Herramienta para ver y bajar informacion de Instagram</td></tr>
+        <tr><td>Gramsnap</td><td><a href="https://gramsnap.com/en/" target="_blank" rel="noopener">https://gramsnap.com/en/</a></td><td>Herramienta para ver y bajar informacion de Instagram</td></tr>        
+        <tr><td>Indown</td><td><a href="https://indown.io/insta-dp-viewer/es" target="_blank" rel="noopener">https://indown.io/insta-dp-viewer/es</a></td><td>Herramienta para ver y bajar informacion de Instagram</td></tr>        
+        <tr><td>Code of a Ninja</td><td><a href="https://www.codeofaninja.com/tools/find-instagram-user-id/" target="_blank" rel="noopener">https://www.codeofaninja.com/tools/find-instagram-user-id/</a></td><td>Búsqueda de UID con nombre de usuario para Instagram</td></tr>        
+        <tr><td>Code of a Ninja</td><td><a href="https://www.codeofaninja.com/tools/" target="_blank" rel="noopener">https://www.codeofaninja.com/tools/</a></td><td>Herramientas para UID de RR.SS.</td></tr>
+        <tr><td>ImgOps</td><td><a href="https://www.imgops.com/" target="_blank" rel="noopener">https://www.imgops.com/</a></td><td>Imagen en línea de meta-tool</td></tr>
+        <tr><td>TinEye</td><td><a href="https://www.tineye.com/" target="_blank" rel="noopener">https://www.tineye.com/</a></td><td>Motor de búsqueda de imagen inversa</td></tr>
+        <tr><td>Google Images</td><td><a href="https://images.google.com/" target="_blank" rel="noopener">https://images.google.com/</a></td><td>Busca imágenes en el repositorio de Google</td></tr>
+        <tr><td>Bing Images</td><td><a href="https://www.bing.com/images" target="_blank" rel="noopener">https://www.bing.com/images</a></td><td>Busca imágenes en el repositorio de Bing</td></tr>
+        <tr><td>Wayback Machine</td><td><a href="https://archive.org/web/" target="_blank" rel="noopener">https://archive.org/web/</a></td><td>Búsqueda de sitios con linea de tiempo</td></tr>
+        <tr><td>Bureau of Prison</td><td><a href="https://www.bop.gov/inmateloc/" target="_blank" rel="noopener">https://www.bop.gov/inmateloc/</a></td><td>Busqueda de presos en el sistema Federal de los EE.UU</td></tr>
+        <tr><td>OSINT Combine</td><td><a href="https://www.osintcombine.com/tools" target="_blank" rel="noopener">https://www.osintcombine.com/tools</a></td><td>Variedad de herramientas de perfil</td></tr>
+        <tr><td>Intel Techniques</td><td><a href="https://inteltechniques.com/tools/index.html" target="_blank" rel="noopener">https://inteltechniques.com/tools/index.html</a></td><td>Variedad de herramientas de perfil</td></tr>
+        <tr><td>IntelX</td><td><a href="https://intelx.io/" target="_blank" rel="noopener">https://intelx.io/</a></td><td>Variedad de herramientas de perfil</td></tr>        
       </tbody>
     </table>
 
-    <p class="small-note">📖📧📨✉📫📩🧾📈.</p>
+    <p class="small-note">Enlaces a herramientas de fuentes abiertas, útiles para labores de la Sección</p>
   `
 },
   
