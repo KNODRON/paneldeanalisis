@@ -116,6 +116,58 @@ body::before{
       padding: 0 6px;
     }
 
+.footer-os9 {
+  background: #004f2d;
+  color: #ffffff;
+  font-size: 12.5px;
+  margin-top: 40px;
+}
+
+.footer-line {
+  height: 4px;
+  background: #00a65a; /* verde táctico */
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  padding: 14px 20px;
+  max-width: 1300px;
+  margin: auto;
+  align-items: center;
+}
+
+.footer-left {
+  text-align: left;
+  font-weight: 600;
+}
+
+.footer-center {
+  text-align: center;
+  font-size: 11.5px;
+  opacity: 0.85;
+  letter-spacing: 0.5px;
+}
+
+.footer-right {
+  text-align: right;
+  font-size: 12px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-left,
+  .footer-right {
+    text-align: center;
+  }
+}
+    
     @media (max-width:420px){
       .card img { width:54px; height:54px; }
       .grid { gap:16px; padding:16px; }
@@ -124,6 +176,27 @@ body::before{
   </style>
 </head>
 
+  <footer class="footer-os9">
+  <div class="footer-line"></div>
+
+  <div class="footer-content">
+    <div class="footer-left">
+      <strong>SECCIÓN ANÁLISIS E INTELIGENCIA CRIMINAL</strong><br>
+      Departamento OS9 – Carabineros de Chile
+    </div>
+
+    <div class="footer-center">
+      USO INTERNO • INFORMACIÓN OPERATIVA
+    </div>
+
+    <div class="footer-right">
+      📧 os9.analisiscriminal@carabineros.cl<br>
+      📧 analisisos9@gmail.com
+    </div>
+  </div>
+</footer>
+
+  
 <body>
 
 <header>🐺 ACCESOS DIRECTOS SECCIÓN ANÁLISIS 🐺</header>
