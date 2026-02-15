@@ -850,76 +850,7 @@ correos_formatos: {
   `
 }
   };
-
-  function procesarTelefono() {
-  const input = document.getElementById("tel-input");
-  if (!input) return;
-
-  let numero = input.value.replace(/\D/g, "");
-
-  if (numero.length < 8) {
-    document.getElementById("resultado-telefono").innerHTML =
-      `<p style="color:red;">⚠ Debe ingresar al menos 8 dígitos.</p>`;
-    return;
-  }
-
-  const especial = identificarPrefijoEspecial(numero);
-  const compania = identificarCompania(numero);
-
-  let html = `<div class="result-box">`;
-
-  if (especial) {
-    html += `<p><b>Número especial detectado:</b><br>${especial}</p>`;
-  } else {
-    html += `
-      <img class="tel-logo" src="${logoTelco(compania)}">
-      <p><b>Compañía Detectada:</b><br>${compania}</p>
-    `;
-  }
-
-  html += `</div>`;
-
-  document.getElementById("resultado-telefono").innerHTML = html;
-}
-
-function logoTelco(nombre){
-  const logos = {
-    "Entel": "logo-entel.png",
-    "Movistar": "logo-movistar.png",
-    "WOM": "logo-wom.png",
-    "Claro": "logo-claro.png",
-    "VTR": "logo-vtr.png",
-    "Mundo": "logo-mundo.png",
-    "Virgin": "logo-virgin.png",
-    "Desconocida": "logo-desconocido.png"
-  };
-  return logos[nombre] || logos["Desconocida"];
-}
-
-function identificarCompania(num){
-  const cuarto = num[1];
-
-  const mapa = {
-    "3": "Entel",
-    "4": "Movistar",
-    "5": "Movistar",
-    "6": "WOM",
-    "7": "WOM",
-    "8": "VTR",
-    "9": "Claro"
-  };
-
-  return mapa[cuarto] || "Desconocida";
-}
-
-function identificarPrefijoEspecial(num){
-  if (num.startsWith("600")) return "600 — Call Center empresas";
-  if (num.startsWith("700")) return "700 — Servicios alternativos";
-  if (num.startsWith("800")) return "800 — Número gratuito";
-  if (num.startsWith("900")) return "900 — Servicio Premium";
-  return null;
-}
-  
+   
 /* ===========================
       FUNCIONES DEL MODAL
 =========================== */
