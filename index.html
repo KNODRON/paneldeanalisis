@@ -282,6 +282,10 @@ body::before{
     <a class="card" href="https://indrive.com/es-cl/contacts/support" target="_blank">
       <img src="icon-indrive.png"><span>inDrive</span>
     </a>
+
+    <a class="card" href="#" data-action="modal" data-key="CABIFY">
+      <img src="icon-cabify.png"><span>CABIFY</span>
+    </a>
     
     <a class="card" href="https://www.red.cl/resultados/?asp_s=GCBB48" target="_blank">
       <img src="icon-red.png"><span>Recorridos por PPU</span>
@@ -655,7 +659,41 @@ correos_interes: {
     <p class="small-note">📧.</p>
   `
 },
+        // 👈 coma importante para separar el bloque anterior
+CABIFY: {
+  title: 'CABIFY',
+  html: `
+    <style>
+      .t-correos { width:100%; border-collapse: collapse; font-size:14px; }
+      .t-correos th {
+        background:#793cda; color:#fff; padding:8px 10px; text-align:left;
+        font-weight:700; font-size:15px;
+      }
+      .t-correos td { padding:8px 10px; border:1px solid #e6efe6; background:#fff; vertical-align:middle; }
+      .t-correos tr:nth-child(even) td { background:#fbfbfb; }
+      .t-correos caption { caption-side: top; font-weight:700; margin-bottom:8px; color:#9242d4; font-size:16px; }
+      .small-note { margin-top:10px; font-size:13px; color:#444; }
+      a.mail-link { color:#007639; text-decoration:none; font-weight:600; }
+      a.mail-link:hover { text-decoration:underline; }
+    </style>
 
+    <table class="t-correos" role="table" aria-label="CABIFY">
+      <caption>CABIFY</caption>
+      <thead>
+        <tr>
+          <th style="width:25%;">ENTIDAD</th>
+          <th style="width:40%;">CORREO</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>SOLICITUD CABIFY</td><td>-<br><a href="mailto:sacfi.chile@cabify.com" class="mail-link">sacfi.chile@cabify.com</a></td></tr>/tr>
+        </tbody>
+    </table>
+
+    <p class="small-note">🚓.</p>
+  `
+},
+  
     Fuentes_Abiertas: {
   title: 'FUENTES ABIERTAS',
   html: `
