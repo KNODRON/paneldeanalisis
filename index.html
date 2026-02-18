@@ -983,7 +983,8 @@ correos_formatos: {
   `
 }
   };
-   
+
+  <script>
 /* ===========================
       FUNCIONES DEL MODAL
 =========================== */
@@ -997,18 +998,24 @@ function openModal(key){
   const modal = document.getElementById("osint-modal");
   modal.style.display = "block";
   modal.setAttribute("aria-hidden","false");
-  const box = document.getElementById('osint-modal-box');
-  
-  box.classList.remove('modal-xl');
 
-  if (key === 'TELEFONOS_SECCIONES_REGIONALES') {
-  box.classList.add('modal-xl');
-}
+  const box = document.getElementById("osint-modal-box");
+  box.classList.remove("modal-xl");
+
+  // ✅ SOLO este modal se agranda
+  if (key === "TELEFONOS_SECCIONES_REGIONALES") {
+    box.classList.add("modal-xl");
+  }
+} // ✅ CIERRE CORRECTO DE openModal
 
 function closeModal(){
   const modal = document.getElementById("osint-modal");
   modal.style.display = "none";
   modal.setAttribute("aria-hidden","true");
+
+  // opcional: por si quedó aplicada
+  const box = document.getElementById("osint-modal-box");
+  box.classList.remove("modal-xl");
 }
 
 /* Eventos */
@@ -1024,6 +1031,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
   document.getElementById("osint-modal-backdrop").onclick = e=>{
     if(e.target.id === "osint-modal-backdrop") closeModal();
   };
+
   document.addEventListener("keydown", e=>{
     if(e.key === "Escape") closeModal();
   });
