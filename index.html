@@ -167,11 +167,6 @@ body::before{
     text-align: center;
   }
 }
-
-  .osint-modal-box.modal-xl {
-  max-width: 96vw !important;
-  width: 96vw !important;
-}
     
     @media (max-width:420px){
       .card img { width:54px; height:54px; }
@@ -382,11 +377,6 @@ body::before{
       <img src="icon-telefono.png"><span>Teléfonos de Interés</span>
     </a>
 
-        <!-- Teléfonos de REGIONES -->
-    <a class="card" href="#" data-action="modal" data-key="TELEFONOS_SECCIONES_REGIONALES">
-      <img src="icon-teono.png"><span>Teléfonos Secciones Regionales</span>
-    </a>
-    
     <a class="card" href="http://telefoniaip.carabineros.cl/" target="_blank">
       <img src="icon-telefoniaip.png"><span>Telefonía IP</span>
     </a>
@@ -447,7 +437,7 @@ body::before{
       z-index:9998; display:flex; align-items:center;
       justify-content:center; padding:20px;">
       
-    <div id="osint-modal-box" class="osint-modal-box" style="
+    <div id="osint-modal-box" style="
         width:100%; max-width:640px; max-height:85vh; overflow-y:auto;
         background:#fff; border-radius:10px; padding:20px;
         box-shadow:0 10px 30px rgba(0,0,0,0.25); position:relative;">
@@ -606,62 +596,6 @@ const OSINT_CONTENT = {
     <p class="small-note">☎️.</p>
   `
 },
-
-   TELEFONOS_SECCIONES_REGIONALES: {
-  title: 'TELÉFONOS SECCIONES REGIONALES',
-  html: `
-    <style>
-      .t-interes th {
-        background:#1f6b3a; color:#fff; padding:8px 10px; text-align:left;
-        font-weight:700; font-size:15px;
-      }
-      .t-interes td { padding:8px 10px; border:1px solid #e6efe6; background:#fff; vertical-align:middle; }
-      .t-interes tr:nth-child(even) td { background:#fbfbfb; }
-      .t-interes caption { caption-side: top; font-weight:700; margin-bottom:8px; color:#174b2b; font-size:16px; }
-      .small-note { margin-top:10px; font-size:13px; color:#444; }
-      .table-wrap{
-        overflow-x:auto; overflow-y:auto; max-width: 92vw; max-height: 70vh; border: 1px solid #e6efe6; border-radius: 10px; background:#fff; }
-
-/* clave: deja que la tabla sea tan ancha como necesite */
-      .t-interes{ border-collapse: collapse; font-size:14px; width: max-content; min-width: 100%; }
-
-      .t-interes th, .t-interes td{ white-space: nowrap; }
-  </style>
-
-<div class="table-wrap" role="region" aria-label="Tabla teléfonos secciones regionales">
-  <table class="t-interes" role="table" aria-label="Tabla teléfonos secciones regionales">
-    <caption>TELÉFONOS SECCIONES REGIONALES</caption>
-    <thead>
-      <tr>
-        <th style="min-width:140px;">SECCIONES</th>
-        <th style="min-width:420px;">DIRECCIÓN</th>
-        <th style="min-width:110px;">NRO. IP</th>
-        <th style="min-width:140px;">CEL. FISCAL</th>
-        <th style="min-width:150px;">IP JEFE SECCIÓN</th>
-        <th style="min-width:140px;">OF. PARTES</th>
-        <th style="min-width:170px;">OF. OPERACIONES</th>
-        <th style="min-width:380px;">OTROS</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr><td>ARICA</td><td>AVDA. RAFAEL SOTOMAYOR NRO. 2031, ARICA</td><td>58218</td><td>982939950</td><td>58219</td><td>NO MANTIENE</td><td>NO MANTIENE</td><td>58297 "EDIF. ESPECIALIDADES"</td></tr>
-        <tr><td>TARAPACÁ</td><td>PJE. CUATRO NRO. 3436, IQUIQUE</td><td>57290</td><td>NO MANTIENE</td><td>57291</td><td>57292</td><td>57295</td><td>57293 "OFICINA SSOO"</td></tr>
-        <tr><td>ANTOFAGASTA</td><td>CALLE TRAVESÍA DE LOS VIENTOS NRO. 02946, ANTOFAGASTA</td><td>55399</td><td>982939887</td><td>55343</td><td>55396</td><td>55396</td><td>55400 "EQUIPO 1", 55401 "EQUIPO 2"</td></tr>
-        <tr><td>COQUIMBO</td><td>CALLE JUAN DE DIOS MELGAREJO NRO. 655, COQUIMBO</td><td>51460</td><td>959153643</td><td>51461</td><td>51462</td><td>51463</td><td>51463 "ANÁLISIS", 51464 "EQUIPO 4"</td></tr>
-        <tr><td>VALPARAÍSO</td><td>CALLE CINCO NORTE NRO. 858, VIÑA DEL MAR</td><td>32550</td><td>952174898</td><td>32551</td><td>32552</td><td>32552</td><td>32554 "ANÁLISIS"</td></tr>
-        <tr><td>OHIGGINS</td><td>CALLE GUILLERMO SAAVEDRA NRO.322, RANCAGUA</td><td>72485</td><td>959154489</td><td>72551</td><td>72553</td><td>NO MANTIENE</td><td>72552 "OF. 2DO. JEFE", 72554 "EQUIPO 1", 72555 "EQUIPO 2"</td></tr>
-        <tr><td>ÑUBLE</td><td>CALLE EL CABILDO NRO. 522, CHILLAN VIEJO</td><td>42410</td><td>934037425</td><td>42411</td><td>42412</td><td>42414</td><td>42416 "EQUIPO 1"</td></tr>
-        <tr><td>BIO-BIO</td><td>AVDA. ALESSANDRI NRO. 1170, CONCEPCIÓN</td><td>41700</td><td>982939781</td><td>41701</td><td>41703</td><td>41702</td><td>NO MANTIENE</td></tr>
-        <tr><td>ARAUCANÍA</td><td>AVDA. BERNARDO OHIGGINS NRO. 608, TEMUCO</td><td>45570</td><td>956893066</td><td>45571</td><td>45573</td><td>45573</td><td>45572 "ANÁLISIS"</td></tr>
-        <tr><td>LOS LAGOS</td><td>CALLE GUILLERMO GALLARDO NRO.523, PUERTO MONTT</td><td>65079</td><td>981884826</td><td>65078</td><td>65080</td><td>65080</td><td>NO MANTIENE</td></tr>
-        <tr><td>MAGALLANES</td><td>CALLE LAUTARO NAVARRO NRO. 1077, PUNTA ARENAS</td><td>61290</td><td>NO MANTIENE</td><td>61291</td><td>NO MANTIENE</td><td>NO MANTIENE</td><td>981884764 "PATRULLA SERVICIO"</td></tr>
-      </tbody>
-  </table>
-</div>
-
-  `
-},
-  
     // 👈 coma importante para separar el bloque anterior
 correos_interes: {
   title: 'CORREOS DE INTERÉS',
@@ -983,18 +917,13 @@ correos_formatos: {
   `
 }
   };
-
-/* ==========================
+   
+/* ===========================
       FUNCIONES DEL MODAL
 =========================== */
-<script>
-// 2) FUNCIONES
 function openModal(key){
   const data = OSINT_CONTENT[key];
-  if(!data) {
-    console.warn("❌ No existe modal con key:", key);
-    return;
-  }
+  if(!data) return;
 
   document.getElementById("osint-modal-title").innerText = data.title;
   document.getElementById("osint-modal-content").innerHTML = data.html;
@@ -1002,24 +931,15 @@ function openModal(key){
   const modal = document.getElementById("osint-modal");
   modal.style.display = "block";
   modal.setAttribute("aria-hidden","false");
-
-  // ✅ agrandar SOLO este
-  const box = document.getElementById("osint-modal-box");
-  box.classList.remove("modal-xl");
-  if (key === "TELEFONOS_SECCIONES_REGIONALES") {
-    box.classList.add("modal-xl");
-  }
 }
 
 function closeModal(){
   const modal = document.getElementById("osint-modal");
   modal.style.display = "none";
   modal.setAttribute("aria-hidden","true");
-
-  document.getElementById("osint-modal-box").classList.remove("modal-xl");
 }
 
-// 3) EVENTOS
+/* Eventos */
 document.addEventListener("DOMContentLoaded", ()=>{
   document.querySelectorAll("[data-action='modal']").forEach(card=>{
     card.addEventListener("click", e=>{
@@ -1032,13 +952,11 @@ document.addEventListener("DOMContentLoaded", ()=>{
   document.getElementById("osint-modal-backdrop").onclick = e=>{
     if(e.target.id === "osint-modal-backdrop") closeModal();
   };
-
   document.addEventListener("keydown", e=>{
     if(e.key === "Escape") closeModal();
   });
 });
 </script>
-
 
 <!-- ====== SERVICE WORKER ====== -->
 <script>
@@ -1048,3 +966,4 @@ if("serviceWorker" in navigator){
     .catch(e=>console.warn("SW error", e));
 }
 </script>
+
