@@ -984,13 +984,17 @@ correos_formatos: {
 }
   };
 
-  <script>
-/* ===========================
+/* ==========================
       FUNCIONES DEL MODAL
 =========================== */
+<script>
+// 2) FUNCIONES
 function openModal(key){
   const data = OSINT_CONTENT[key];
-  if(!data) return;
+  if(!data) {
+    console.warn("❌ No existe modal con key:", key);
+    return;
+  }
 
   document.getElementById("osint-modal-title").innerText = data.title;
   document.getElementById("osint-modal-content").innerHTML = data.html;
@@ -999,26 +1003,23 @@ function openModal(key){
   modal.style.display = "block";
   modal.setAttribute("aria-hidden","false");
 
+  // ✅ agrandar SOLO este
   const box = document.getElementById("osint-modal-box");
   box.classList.remove("modal-xl");
-
-  // ✅ SOLO este modal se agranda
   if (key === "TELEFONOS_SECCIONES_REGIONALES") {
     box.classList.add("modal-xl");
   }
-} // ✅ CIERRE CORRECTO DE openModal
+}
 
 function closeModal(){
   const modal = document.getElementById("osint-modal");
   modal.style.display = "none";
   modal.setAttribute("aria-hidden","true");
 
-  // opcional: por si quedó aplicada
-  const box = document.getElementById("osint-modal-box");
-  box.classList.remove("modal-xl");
+  document.getElementById("osint-modal-box").classList.remove("modal-xl");
 }
 
-/* Eventos */
+// 3) EVENTOS
 document.addEventListener("DOMContentLoaded", ()=>{
   document.querySelectorAll("[data-action='modal']").forEach(card=>{
     card.addEventListener("click", e=>{
@@ -1037,6 +1038,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
   });
 });
 </script>
+
 
 <!-- ====== SERVICE WORKER ====== -->
 <script>
